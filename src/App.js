@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 // Importa el nuevo archivo Products.js
 import Products from './products';
-
+import ProductoLG from './ProductoLG';
+import Marcas from './Marca';
 // Componentes de Páginas
 
 // Página de Oferta
@@ -13,10 +14,16 @@ const Sale = () => <h2>Sale Page</h2>;
 const Ferreteria = () => <h2>Ferreteria Page</h2>;
 
 // Página de Marcas
-const Brands = () => <h2>Brands Page</h2>;
+const Brands = () => {
+  return(
+    <Marcas/>
+  )
+};
 
 // Página de Outlet
-const Outlet = () => <h2>ProductoLG</h2>;
+const Outlet = () => {
+  return(<ProductoLG/>)
+};
 
 // Página de Envío
 const Shipping = () => <h2>Shipping Page</h2>;

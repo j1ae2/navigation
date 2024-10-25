@@ -6,7 +6,7 @@ export default function ProductoLG() {
   useEffect(() => {
     async function fetchData() {
       const url = "https://fakestoreapi.com/products/";
-      const response = await fetch(url + "?limit=5");
+      const response = await fetch(url + "?limit=8");
       if (!response.ok) {
         const mensaje = "ocurrió un error";
         throw new Error(mensaje);
@@ -17,7 +17,7 @@ export default function ProductoLG() {
 
     fetchData();
   }, []); // El array vacío asegura que esto solo se ejecuta una vez cuando el componente se monta
-
+  console.log("TEST")
   return (
     <div>
       <h1>Productos</h1>
