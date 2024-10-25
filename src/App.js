@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
+import Ferreteria from './Ferreteria';
+import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './tipoFerreteria';
+
 // Importa el nuevo archivo Products.js
 import Products from './products';
 
@@ -8,9 +11,6 @@ import Products from './products';
 
 // Página de Oferta
 const Sale = () => <h2>Sale Page</h2>;
-
-// Página de Inspiración
-const Ferreteria = () => <h2>Ferreteria Page</h2>;
 
 // Página de Marcas
 const Brands = () => <h2>Brands Page</h2>;
@@ -107,7 +107,7 @@ const Header = () => {
           {/* Menú de navegación con enlaces a diferentes páginas */}
           <li><Link to="/products">Productos</Link></li> {/* Modificación para enlazar con Products.js */}
           <li><Link to="/sale">SALE</Link></li>
-          <li><Link to="/Ferreteria">Ferreteria</Link></li>
+          <li><Link to="/Ferreteria">Ferretería</Link></li>
           <li><Link to="/brands">Marcas</Link></li>
           <li><Link to="/outlet">Outlet</Link></li>
           <li><Link to="/shipping">Shipping</Link></li>
@@ -372,6 +372,10 @@ const App = () => {
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/returns-warranty" element={<ReturnsWarranty />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/Tornillos" element={<Tornillos />} />
+          <Route path="/Adhesivos" element={<Adhesivos />} />
+          <Route path="/Soldaduras" element={<Soldaduras />} />
+          <Route path="/Tuverias" element={<Tuverias />} />
         </Routes>
       </div>
     </Router>
