@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Marca.css";
 import nike from "./logos/nike.png"
 import puma from "./logos/puma.png"
 import rebook from "./logos/rebook.png"
@@ -24,13 +25,13 @@ export default function Marcas() {
   }, []);
 
   return (
-    <div>
-      <h2>Nuestras Marcas</h2>
-      <div>
-        {brands.map((marca) => (
-          <a href={marca.link} key={marca.id}>
-            <img src={marca.logo} alt={marca.name}/>
-            <p>{marca.name}</p>
+    <div className="contenedor-marca">
+      <h2 className="titulo-marca">Nuestras Marcas</h2>
+      <div className="red-marca">
+        {brands.map((brand) => (
+          <a href={brand.link} target="_blank" rel="noopener noreferrer" key={brand.id} className="item-marca">
+            <img src={brand.logo} alt={brand.name} className="logo-marca" />
+            <p className="nombre-marca">{brand.name}</p>
           </a>
         ))}
       </div>
