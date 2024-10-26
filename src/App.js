@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import Ferreteria from './Ferreteria';
 import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './tipoFerreteria';
+import ReturnsWarranty from './ReturnsWarranty'; // Importa el componente ReturnsWarranty
+
+
+
+
 
 // Importa el nuevo archivo Products.js
 import Products from './products';
@@ -28,8 +33,6 @@ const Outlet = () => {
 // Página de Envío
 const Shipping = () => <h2>Shipping Page</h2>;
 
-// Página de Devoluciones y Garantía
-const ReturnsWarranty = () => <h2>Returns & Warranty Page</h2>;
 
 // Página de Contacto
 const Contacto = () => <h2>Contact Page</h2>;
@@ -38,7 +41,7 @@ const Contacto = () => <h2>Contact Page</h2>;
 
 
 
-// Página de Contacto
+// Página de Contacto //////////////////////////////////////////
 const Contact = () => {
   return (
     <div>
@@ -49,7 +52,7 @@ const Contact = () => {
       <ul>
         <li>**Correo** mycontainer@mail.com</li>
         <li>**Teléfono:** +96434232</li>
-        <li>**Redes sociales:** Síguenos en [nombre de tu red social] para estar al día de nuestras novedades.</li>
+        <li>**Redes sociales:** Síguenos en [container] para estar al día de nuestras novedades.</li> 
       </ul>
 
       <h3>Formulario de contacto</h3>
@@ -120,6 +123,8 @@ const Header = () => {
           <li><Link to="/shipping">Shipping</Link></li>
           <li><Link to="/returns-warranty">Devoluciones & Garantias</Link></li>
           <li><Link to="/contact">Contacto</Link></li>
+          <li><Link to="/returns">Devoluciones</Link></li>
+
         </ul>
       </nav>
     </header>
@@ -319,7 +324,7 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Customer Support</h3>
           <ul>
-            <li><a href="#">Returns & Warranty</a></li>
+            <li><a href="#">Returnos & Garantias</a></li>
             <li><a href="#">Payments</a></li>
             <li><a href="#">Shipping</a></li>
             <li><a href="#">Terms of Service</a></li>
@@ -377,18 +382,19 @@ const App = () => {
           <Route path="/brands" element={<Brands />} />
           <Route path="/outlet" element={<Outlet />} />
           <Route path="/shipping" element={<Shipping />} />
+          // Dentro de las Rutas en App.js
           <Route path="/returns-warranty" element={<ReturnsWarranty />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/Tornillos" element={<Tornillos />} />
           <Route path="/Adhesivos" element={<Adhesivos />} />
           <Route path="/Soldaduras" element={<Soldaduras />} />
           <Route path="/Tuverias" element={<Tuverias />} />
+          // Inside the Routes component in App.js
         </Routes>
       </div>
     </Router>
   );
 };
-
 
 
 
