@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'; //  
-
+import { login } from './services/loginService';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('user'); // "user" o "cliente"
+  const [role, setRole] = useState('user');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica de autenticación, como llamar a una API o servicio de autenticación
     if (email && password) {
-      // Redirige al usuario a la página principal o a otra según el rol
-      navigate('/');
+      try {
+        const data = await login(email, password);
+        alert(data.message); // Muestra el mensaje de éxito
+        navigate('/'); // Redirige al usuario
+      } catch (error) {
+        alert(error.message); // Muestra el mensaje de error del backend
+      }
     } else {
       alert("Por favor completa todos los campos.");
     }
