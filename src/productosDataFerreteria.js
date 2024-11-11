@@ -5,7 +5,8 @@ const TornillosList = [
         title: "Tornillos de Cabeza Hueca",
         description: "Con un giro más profundo que los tornillos de cabeza plana y redondeada, estos soportan más torsión para un agarre más firme",
         products: 7875,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoNGP45aINpEOzcRxvSbmIxwy0harwNHgJYre6x07X6eeGuE7MDquN216LTS9NdnUK2Z4&usqp=CAU"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoNGP45aINpEOzcRxvSbmIxwy0harwNHgJYre6x07X6eeGuE7MDquN216LTS9NdnUK2Z4&usqp=CAU",
+        precio: 44.95
     },
     {
         id: 2,
@@ -275,5 +276,176 @@ const TornillosList = [
     }
     
 ];
+const AdhesivosList = [
+    {
+        id: 1,
+        title: "Adhesivos",
+        description: "Une superficies",
+        products: 625,
+        image: "adhesivos_image_url"
+    },
+    {
+        id: 2,
+        title: "Boquillas para pistolas dispensadoras de adhesivo",
+        description: "Usar con cartuchos en pistolas dispensadoras para controlar el flujo de adhesivo",
+        products: 79,
+        image: "boquillas_pistolas_dispensadoras_adhesivo_image_url"
+    },
+    {
+        id: 3,
+        title: "Pistolas dispensadoras de adhesivo",
+        description: "Aplica cordones de adhesivo desde un cartucho a superficies",
+        products: 20,
+        image: "pistolas_dispensadoras_adhesivo_image_url"
+    },
+    {
+        id: 4,
+        title: "Émbolos para cartuchos de pistolas dispensadoras de adhesivo",
+        description: "Usar con jeringas o cartuchos de pistolas dispensadoras para empujar el adhesivo hacia afuera",
+        products: 6,
+        image: "embolos_cartuchos_pistolas_dispensadoras_adhesivo_image_url"
+    },
+    {
+        id: 5,
+        title: "Portacartuchos para pistolas dispensadoras de adhesivo",
+        description: "Mantiene los cartuchos de adhesivo en su lugar de forma segura",
+        products: 7,
+        image: "portacartuchos_pistolas_dispensadoras_adhesivo_image_url"
+    },
+    {
+        id: 6,
+        title: "Cartuchos para pistolas dispensadoras de adhesivo",
+        description: "Llenar y luego montar en pistolas dispensadoras para aplicar adhesivos a superficies",
+        products: 6,
+        image: "cartuchos_pistolas_dispensadoras_adhesivo_image_url"
+    },
+    {
+        id: 7,
+        title: "Convertidores para pistolas de pegamento",
+        description: "Agregar a pistolas de pegamento para usar barras de pegamento de 8\" de largo",
+        products: 1,
+        image: "convertidores_pistolas_pegamento_image_url"
+    },
+    {
+        id: 8,
+        title: "Pistolas de pegamento",
+        description: "Derrite y dispensa pegamento termofusible",
+        products: 12,
+        image: "pistolas_pegamento_image_url"
+    },
+    {
+        id: 9,
+        title: "Boquillas para pistolas de pegamento",
+        description: "Acopla a pistolas de pegamento para controlar el flujo de pegamento",
+        products: 4,
+        image: "boquillas_pistolas_pegamento_image_url"
+    },
+    {
+        id: 10,
+        title: "Dispensadores de tubos",
+        description: "Exprime todo el contenido de los tubos",
+        products: 2,
+        image: "dispensadores_tubos_image_url"
+    },
+    {
+        id: 11,
+        title: "Tapas selladoras para cartuchos",
+        description: "Colocar sobre las puntas de cartuchos de adhesivo y sellador para evitar que se endurezcan",
+        products: 1,
+        image: "tapas_selladoras_cartuchos_image_url"
+    },
+    {
+        id: 12,
+        title: "Dispensadores de bloqueadores de roscas y compuestos de retención",
+        description: "Atornillar en botellas de bloqueador de roscas o compuesto de retención para controlar el flujo y reducir desperdicio",
+        products: 2,
+        image: "dispensadores_bloqueadores_roscas_image_url"
+    },
+    {
+        id: 13,
+        title: "Dispensadores de pegamento en rollo",
+        description: "Aprieta el gatillo para retirar el revestimiento y aplicar pegamento en rollo; también conocido como cinta adhesiva de transferencia",
+        products: 2,
+        image: "dispensadores_pegamento_rollo_image_url"
+    },
+    {
+        id: 14,
+        title: "Brochas para adhesivo",
+        description: "Esparce adhesivos en partes y otras superficies",
+        products: 6,
+        image: "brochas_adhesivo_image_url"
+    },
+    {
+        id: 15,
+        title: "Rodillos de laminado",
+        description: "Comprime láminas laminadas, extiende adhesivos y expulsa burbujas de aire para formar uniones fuertes",
+        products: 10,
+        image: "rodillos_laminado_image_url"
+    },
+    {
+        id: 16,
+        title: "Ollas de pegamento",
+        description: "Almacena adhesivos, cementos y lacas para evitar que se endurezcan",
+        products: 2,
+        image: "ollas_pegamento_image_url"
+    },
+    {
+        id: 17,
+        title: "Bloqueadores de roscas",
+        description: "Cubre las roscas en los sujetadores roscados para evitar que se aflojen debido a impactos y vibraciones",
+        products: 112,
+        image: "bloqueadores_roscas_image_url"
+    },
+    {
+        id: 18,
+        title: "Activadores de adhesivo",
+        description: "Agrega a adhesivos estructurales acrílicos sin mezcla para crear uniones fuertes",
+        products: 2,
+        image: "activadores_adhesivo_image_url"
+    },
+    {
+        id: 19,
+        title: "Compuestos de retención",
+        description: "Llena huecos para unir ejes, rodamientos, poleas, engranajes y otras partes metálicas cilíndricas",
+        products: 43,
+        image: "compuestos_retencion_image_url"
+    },
+    {
+        id: 20,
+        title: "Cuentas espaciadoras de adhesivo",
+        description: "Agrega a adhesivos estructurales e instantáneos para evitar que se derramen durante el prensado",
+        products: 1,
+        image: "cuentas_espaciadoras_adhesivo_image_url"
+    },
+    {
+        id: 21,
+        title: "Imprimadores de adhesivo",
+        description: "Prepara superficies antes de agregar adhesivos para mejorar la resistencia de la unión",
+        products: 19,
+        image: "imprimadores_adhesivo_image_url"
+    },
+    {
+        id: 22,
+        title: "Aceleradores de adhesivo",
+        description: "Acelera el tiempo que tarda el adhesivo en alcanzar su máxima resistencia",
+        products: 13,
+        image: "aceleradores_adhesivo_image_url"
+    },
+    {
+        id: 23,
+        title: "Fluido antideslizante",
+        description: "Aplicar en las cabezas de los sujetadores para evitar que destornilladores, llaves y alicates se deslicen",
+        products: 1,
+        image: "fluido_antideslizante_image_url"
+    },
+    {
+        id: 24,
+        title: "Cinta",
+        description: "Une, sella y marca superficies",
+        products: 63,
+        image: "cinta_image_url"
+    }
+    
+]
 
-export default TornillosList;
+export { TornillosList ,AdhesivosList};
