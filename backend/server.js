@@ -42,6 +42,7 @@ app.post('/saveSubscription', (req, res) => {
   res.status(200).json({ message: 'Suscripción guardada exitosamente' });
 });
 
+//PÁGINA DE LOGIN
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
@@ -60,8 +61,15 @@ app.post('/login', async (req, res) => {
   }
 });
 
-
-
+//PÁGINA DE CONTACTO
+app.post('/contacto',(req, res) => {
+  const { nombre, correo, mensaje } = req.body;
+  if (nombre && correo && mensaje) {
+    res.json({ message: '¡Nos contactaremos pronto con usted!' });
+  } else {
+    res.status(400).json({ error: 'Algo salió mal' });
+  }
+});
 
 // Iniciar el servidor
 app.listen(PORT, () => {

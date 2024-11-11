@@ -9,7 +9,7 @@ salt = bcrypt.gensalt(rounds=10)
 # Generar usuarios con contraseñas hasheadas
 users = []
 for i in range(1, num_users + 1):
-    username = f"user{i}"
+    username = f"user{i}@gmail.com"
     password = f"test{i}"
     # Hashear la contraseña con el salt predefinido
     password_hash = bcrypt.hashpw(password.encode('utf-8'), salt).decode('utf-8')
