@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Ferreteria.css";
-import TornillosList from "./productosData";
+import TornillosList from "./productosDataFerreteria";
 
 const Tornillos = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -36,7 +36,7 @@ const Tornillos = () => {
         {TornillosList.map((item) => (
           <div className="tarjeta-producto" key={item.id}>
             <img src={item.image} alt={item.title} className="Imagen-producto" />
-            <div className="product-info">
+            <div className="info-producto">
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <p>{item.products} productos</p>

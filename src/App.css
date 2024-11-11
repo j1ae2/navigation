@@ -1,3 +1,9 @@
+/* Ajustar el ancho de toda la página a 3/4 de la pantalla y centrar */
+body {
+  width: 75%; /* Ancho de 3/4 de la página */
+  margin: 0 auto; /* Centrar la página en la pantalla */
+}
+
 /* Header styles */
 .header {
   width: 100%;
@@ -244,24 +250,19 @@
 .reviews {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
+  width: 75%; /* Ocupa 3/4 del ancho de la página */
+  max-width: 1200px; /* Limitar ancho máximo si es necesario */
 }
 
-/* Tarjetas de reseñas */
 .review-card {
-  width: 22%;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  text-align: center;
-}
-
-.review-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.review-card p {
-  margin-bottom: 5px;
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 300px; /* Tamaño máximo de cada tarjeta */
+  width: 100%; /* Permitir que se ajusten al ancho disponible */
 }
 
 /* Footer */
@@ -328,3 +329,28 @@ footer {
   color: #000;
 }
 
+.tipoFerreteria {
+  text-align: center;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.category-item {
+  text-align: center;
+}
+
+.category-image {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.review-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
