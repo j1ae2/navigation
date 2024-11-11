@@ -18,23 +18,23 @@ const Tornillos = () => {
   // Si hay un producto seleccionado, muestra el detalle
   if (selectedProduct) {
     return (
-      <div className="producto-detalle-tornillos">
-        <button onClick={handleBackToList} className="back-button-tornillos">
+      <div className="producto-detalle">
+        <button onClick={handleBackToList} className="back-button">
           Regresar a la lista
         </button>
-        <div className="detalle-contenedor-tornillos">
+        <div className="detalle-contenedor">
           <img
             src={selectedProduct.image}
             alt={selectedProduct.title}
-            className="imagen-detalle-tornillos"
+            className="imagen-detalle"
           />
-          <div className="info-detalle-tornillos">
-            <h2 className="titulo-detalle-tornillos">{selectedProduct.title}</h2>
+          <div className="info-detalle">
+            <h2 className="titulo-detalle">{selectedProduct.title}</h2>
             
-            <p className="productos-detalle-tornillos">{selectedProduct.products} productos</p>
-            <p className="precio-detalle-tornillos">{selectedProduct.precio}</p> 
-            <p className="descripcion-detalle-tornillos">{selectedProduct.description}</p>
-            <button className="add-cart-button-tornillos">Agregar al carrito</button>
+            <p className="productos-detalle">{selectedProduct.products} productos</p>
+            <p className="precio-detalle">{selectedProduct.precio}</p> 
+            <p className="descripcion-detalle">{selectedProduct.description}</p>
+            <button className="add-cart-button">Agregar al carrito</button>
           </div>
         </div>
       </div>
@@ -43,18 +43,18 @@ const Tornillos = () => {
 
   // Si no hay producto seleccionado, muestra la lista de productos
   return (
-    <section className="Productos-tornillos">
+    <section className="Productos-general">
       <h2>Tornillos</h2>
-      <div className="product-gridTornillos">
+      <div className="product-grid-general">
         {TornillosList.map((item) => (
-          <div className="tarjeta-productoTornillos" key={item.id}>
-            <img src={item.image} alt={item.title} className="Imagen-productoTornillos" />
-            <div className="info-productoTornillos">
+          <div className="tarjeta-producto-general" key={item.id}>
+            <img src={item.image} alt={item.title} className="Imagen-producto-general" />
+            <div className="info-producto-general">
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <p>{item.products} productos</p>
               <button
-                className="view-detailsTornillos"
+                className="view-details-general"
                 onClick={() => handleViewDetails(item)}
               >
                 Agregar al carrito
@@ -96,18 +96,18 @@ const Adhesivos = () => {
 
   // Si no hay producto seleccionado, muestra la lista de productos
   return (
-    <section className="Productos-Adhesivos">
+    <section className="Productos-general">
       <h2>Adhesivos</h2>
-      <div className="product-grid">
+      <div className="product-grid-general">
         {AdhesivosList.map((item) => (
-          <div className="tarjeta-producto" key={item.id}>
-            <img src={item.image} alt={item.title} className="Imagen-producto" />
-            <div className="info-producto">
+          <div className="tarjeta-producto-general" key={item.id}>
+            <img src={item.image} alt={item.title} className="Imagen-producto-general" />
+            <div className="info-producto-general">
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <p>{item.products} productos</p>
               <button
-                className="view-details"
+                className="view-details-general"
                 onClick={() => handleViewDetails(item)}
               >
                 Agregar al carrito

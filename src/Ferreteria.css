@@ -1,16 +1,16 @@
-.Productos-tornillos {
+.Productos-general {
     padding: 20px;
     text-align: center;
   }
   
-  .product-gridTornillos {
+  .product-grid-general {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
     gap: 20px;
     margin-top: 20px;
   }
   
-  .tarjeta-productoTornillos {
+  .tarjeta-producto-general {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
@@ -22,20 +22,20 @@
     height: 200px;
     box-sizing: border-box; 
 }
-.tarjeta-productoTornillos h3 {
+.tarjeta-producto-general h3 {
   margin: 0 0 10px 0;
   font-size: 12px;
   text-align: left; 
 }
 
-.tarjeta-productoTornillos p {
+.tarjeta-producto-general p {
   margin: 5px 0;
   font-size: 10px;
   text-align: left;
 }
 
 
-.Imagen-productoTornillos {
+.Imagen-producto-general{
     width: 80px;
     height: 80px;
     margin-right: 15px; /* Espacio entre la imagen y el texto */
@@ -43,7 +43,7 @@
     background-color: transparent; /* Asegúrate de que no tenga fondo */
     border-radius: 5px;
 }
-.producto-detalle-tornillos {
+.producto-detalle {
   max-width: 800px;
   margin: 0 auto;
   margin-top: 50px;
@@ -51,7 +51,7 @@
 
 }
 
-.back-button-tornillos {
+.back-button {
   background: none;
   border: none;
   color: #007bff;
@@ -60,42 +60,42 @@
   margin-bottom: 20px;
 }
 
-.detalle-contenedor-tornillos {
+.detalle-contenedor {
   display: flex;
   gap: 20px;
 }
 
-.imagen-detalle-tornillos {
+.imagen-detalle {
   width: 250px;
   height: auto;
   border-radius: 8px;
   margin-right: 20px;
 }
 
-.info-detalle-tornillos {
+.info-detalle {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.titulo-detalle-tornillos {
+.titulo-detalle {
   font-size: 24px;
   font-weight: bold;
 }
 
-.descripcion-detalle-tornillos,
-.productos-detalle-tornillos {
+.descripcion-detalle,
+.productos-detalle {
   font-size: 16px;
   color: #555;
 }
 
-.precio-detalle-tornillos {
+.precio-detalle {
   font-size: 22px;
   color: #333;
   font-weight: bold;
 }
 
-.add-cart-button-tornillos {
+.add-cart-button{
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
@@ -105,7 +105,7 @@
   font-size: 16px;
 }
 
-.add-cart-button-tornillos:hover {
+.add-cart-button:hover {
   background-color: #0056b3;
 }
 
