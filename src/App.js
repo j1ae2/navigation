@@ -61,7 +61,7 @@ const Header = () => {
         <div className="navbar-icons">
           <span>❤ 12</span>
           <Link to="/login">Login</Link>
-          <span>🛒 2</span>
+          <Link to="/carrito">🛒</Link>
         </div>
       </div>
       <nav className="main-nav">
@@ -97,6 +97,30 @@ const HeroSection = () => {
         <span>●</span> <span>○</span> <span>○</span>
       </div>
     </section>
+  );
+};
+const Carrito = () => {
+  return (
+    <>
+    <section className="grid-carrito">
+      <h2>Dentro de cada carrito </h2>
+      <h2>Se encuentra un gran potencial.</h2>
+         
+      <p>
+      Parece que su carrito de compras está vacío.
+
+      Explore y agregue elementos para comenzar.
+      </p>
+        <Link to="/products">
+        <button className="add-cart-productos" >Empieza a comprar</button></Link> 
+        <p>o</p>
+        <Link to="/login">
+        <button className="add-cart-login">Login</button></Link>
+        <p>Para ver los artículos de su carrito y los productos guardados
+        de tu visita anterior</p>
+    </section>
+     <Footer />
+     </>
   );
 };
 
@@ -302,8 +326,11 @@ const App = () => {
           <Route path="/returns-warranty" element={<ReturnsWarranty />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Tornillos" element={<Tornillos />} />
-          <Route path="/Adhesivos" element={<Adhesivos />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/Ferreteria/Tornillos" element={<Tornillos />} />
+          <Route path="/Ferreteria/Tornillos/:productTitle" element={<Tornillos />} />
+          <Route path="/Ferreteria/Adhesivos" element={<Adhesivos />} />
+          <Route path="/Ferreteria/Adhesivos/:productTitle" element={<Adhesivos />} />
           <Route path="/Soldaduras" element={<Soldaduras />} />
           <Route path="/Tuverias" element={<Tuverias />} />
         </Routes>

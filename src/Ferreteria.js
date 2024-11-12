@@ -6,7 +6,7 @@ const TipoFerreteria = () => {
   return (
     <section className="product-categories">
       <div className="category">
-        <Link to="/Tornillos">
+        <Link to="/Ferreteria/Tornillos">
           <div className="category-img">
             <img
               src="https://waykenrm.com/wp-content/uploads/2021/09/fasteners-type-optimized.png"
@@ -19,7 +19,7 @@ const TipoFerreteria = () => {
       </div>
 
       <div className="category">
-        <Link to="/Adhesivos">
+        <Link to="/Ferreteria/Adhesivos">
           <div className="category-img">
             <img
               src="https://www.ferricentro.com/media/catalog/product/C/I/CINTA-AISLANTE-19-MM-X-20-MTS-PROFESIONAL-TESA.png?quality=80&bg-color=255,255,255&fit=bounds&height=500&width=500&canvas=500:500"

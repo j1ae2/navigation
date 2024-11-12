@@ -1,21 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Ferreteria.css";
 import { TornillosList ,AdhesivosList} from "./productosDataFerreteria";
 
 const Tornillos = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const navigate = useNavigate();
 
-  // Maneja el clic en un producto para mostrar su detalle
+
   const handleViewDetails = (product) => {
     setSelectedProduct(product);
+    navigate(`/Ferreteria/Tornillos/${product.title}`);
+    
   };
 
-  // Maneja el regreso a la lista de productos
   const handleBackToList = () => {
     setSelectedProduct(null);
+    navigate("/Ferreteria/Tornillos");
   };
 
-  // Si hay un producto seleccionado, muestra el detalle
   if (selectedProduct) {
     return (
       <div className="producto-detalle">
@@ -41,7 +44,6 @@ const Tornillos = () => {
     );
   };
 
-  // Si no hay producto seleccionado, muestra la lista de productos
   return (
     <section className="Productos-general">
       <h2>Tornillos</h2>
@@ -67,34 +69,46 @@ const Tornillos = () => {
   );
 };
 
-// Otros componentes para las secciones adicionales
+
 const Adhesivos = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
-
-  // Maneja el clic en un producto para mostrar su detalle
+  const navigate = useNavigate();
+ 
   const handleViewDetails = (product) => {
     setSelectedProduct(product);
+    navigate(`/Ferreteria/Adhesivos/${product.title}`);
   };
 
-  // Maneja el regreso a la lista de productos
   const handleBackToList = () => {
     setSelectedProduct(null);
+    navigate("/Ferreteria/Adhesivos");
   };
 
-  // Si hay un producto seleccionado, muestra el detalle
   if (selectedProduct) {
     return (
       <div className="producto-detalle">
-        <button onClick={handleBackToList}>Regresar a la lista</button>
-        <img src={selectedProduct.image} alt={selectedProduct.title} className="Imagen-detalle" />
-        <h2>{selectedProduct.title}</h2>
-        <p>{selectedProduct.description}</p>
-        <p>{selectedProduct.products} productos</p>
+        <button onClick={handleBackToList} className="back-button">
+          Regresar a la lista
+        </button>
+        <div className="detalle-contenedor">
+          <img
+            src={selectedProduct.image}
+            alt={selectedProduct.title}
+            className="imagen-detalle"
+          />
+          <div className="info-detalle">
+            <h2 className="titulo-detalle">{selectedProduct.title}</h2>
+            
+            <p className="productos-detalle">{selectedProduct.products} productos</p>
+            <p className="precio-detalle">{selectedProduct.precio}</p> 
+            <p className="descripcion-detalle">{selectedProduct.description}</p>
+            <button className="add-cart-button">Agregar al carrito</button>
+          </div>
+        </div>
       </div>
     );
   };
 
-  // Si no hay producto seleccionado, muestra la lista de productos
   return (
     <section className="Productos-general">
       <h2>Adhesivos</h2>
@@ -134,5 +148,5 @@ const Tuverias = () => (
   </div>
 );
 
-// Exporta todos los componentes
+
 export { Tornillos, Adhesivos, Soldaduras, Tuverias };
