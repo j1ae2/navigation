@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import Ferreteria from './Ferreteria';
-import { Tornillos,Adhesivos, Soldaduras, Tuverias } from './tipoFerreteria';
+import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './tipoFerreteria';
 import ReturnsWarranty from './ReturnsWarranty';
 import Products from './products';
 import ProductoLG from './ProductoLG';
@@ -99,11 +99,12 @@ const HeroSection = () => {
     </section>
   );
 };
+
 const Carrito = () => {
   return (
     <>
     <section className="grid-carrito">
-      <h2>Dentro de cada carrito </h2>
+      <h2>Dentro del  carrito </h2>
       <h2>Se encuentra un gran potencial.</h2>
          
       <p>
@@ -145,7 +146,6 @@ const NewProducts = () => {
 
 const PromoBox = () => {
   const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
   const [buttonText, setButtonText] = useState('SUSCRÍBETE');
   const [buttonColor, setButtonColor] = useState('#007bff');
 
@@ -204,11 +204,6 @@ const ReviewSection = () => {
     { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
     { title: "Muy funcional", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
     { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
-    { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    { title: "Muy funcional", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
-    { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
- 
   ];
 
   const reviewsPerPage = 4;
@@ -328,9 +323,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/Ferreteria/Tornillos" element={<Tornillos />} />
-          <Route path="/Ferreteria/Tornillos/:productTitle" element={<Tornillos />} />
           <Route path="/Ferreteria/Adhesivos" element={<Adhesivos />} />
-          <Route path="/Ferreteria/Adhesivos/:productTitle" element={<Adhesivos />} />
           <Route path="/Soldaduras" element={<Soldaduras />} />
           <Route path="/Tuverias" element={<Tuverias />} />
         </Routes>
