@@ -8,6 +8,8 @@ import Products from './products';
 import ProductoLG from './ProductoLG';
 import Marcas from './Marca';
 import Login from './login';
+import { enviarMensajeContacto } from './services/contactService';
+import './contacto.css';
 
 const Sale = () => <h2>Sale Page</h2>;
 const Brands = () => <Marcas />;
@@ -15,21 +17,66 @@ const Outlet = () => <ProductoLG />;
 const Shipping = () => <h2>Shipping Page</h2>;
 
 const Contact = () => {
+  const [nombre, setNombre] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [mensaje, setMensaje] = useState('');
+  const [respuesta, setRespuesta] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const datosContacto = { nombre, correo, mensaje };
+      const data = await enviarMensajeContacto(datosContacto);
+      
+      setRespuesta(data.message);
+      setNombre('');
+      setCorreo('');
+      setMensaje('');
+    } catch (error) {
+      setRespuesta(error.message);
+    }
+  };
   return (
-    <div>
+    <div className="contact-container">
       <h1>¡Contáctanos!</h1>
       <p>¿Tienes alguna pregunta o necesitas más información? ¡Estamos aquí para ayudarte!</p>
       <h2>¿Cómo contactarnos?</h2>
       <ul>
         <li><strong>Correo:</strong> mycontainer@mail.com</li>
         <li><strong>Teléfono:</strong> +96434232</li>
-        <li><strong>Redes sociales:</strong> Síguenos en [container] para estar al día de nuestras novedades.</li> 
+        <li><strong>Redes sociales:</strong> Síguenos en nuestras redes para estar al día de nuestras novedades.</li> 
       </ul>
       <h3>Formulario de contacto</h3>
-      <p>Nombre: <input type="text" /></p>
-      <p>Correo electrónico: <input type="email" /></p>
-      <p>Mensaje: <textarea></textarea></p>
-      <button>Enviar</button>
+      <form onSubmit={handleSubmit}>
+        <label>Nombre:
+          <input 
+            type="text" 
+            value={nombre} 
+            onChange={(e) => setNombre(e.target.value)} 
+            required 
+          />
+        </label>
+        <br />
+        <label>Correo electrónico:
+          <input 
+            type="email" 
+            value={correo} 
+            onChange={(e) => setCorreo(e.target.value)} 
+            required 
+          />
+        </label>
+        <br />
+        <label>Mensaje:
+          <textarea 
+            value={mensaje} 
+            onChange={(e) => setMensaje(e.target.value)} 
+            required 
+          />
+        </label>
+        <br />
+        <button type="submit">Enviar</button>
+      </form>
+      {respuesta && <p>{respuesta}</p>}
     </div>
   );
 };
