@@ -61,14 +61,16 @@ app.post('/login', async (req, res) => {
   }
 });
 
-//PÁGINA DE CONTACTO
-app.post('/contacto',(req, res) => {
+// PÁGINA DE CONTACTO
+app.post('/contacto', (req, res) => {
   const { nombre, correo, mensaje } = req.body;
-  if (nombre && correo && mensaje) {
-    res.json({ message: '¡Nos contactaremos pronto con usted!' });
-  } else {
-    res.status(400).json({ error: 'Algo salió mal' });
+  
+  if (!nombre || !correo || !mensaje) {
+    return res.status(400).json({ error: 'Todos los campos son obligatorios.' });
   }
+  console.log(`Nuevo mensaje de contacto: ${nombre}, ${correo}, ${mensaje}`);
+
+  res.json({ message: '¡Nos contactaremos pronto con usted!' });
 });
 
 // Iniciar el servidor
