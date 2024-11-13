@@ -8,6 +8,7 @@ const TornillosList = [
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoNGP45aINpEOzcRxvSbmIxwy0harwNHgJYre6x07X6eeGuE7MDquN216LTS9NdnUK2Z4&usqp=CAU",
         precio: 44.95
     },
+    
     {
         id: 2,
         title: "Tornillos de Cabeza Redondeada",

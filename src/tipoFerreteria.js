@@ -21,6 +21,7 @@ const Tornillos = () => {
 
   if (selectedProduct) {
     return (
+
       <div className="producto-detalle">
         <button onClick={handleBackToList} className="back-button">
           Regresar a la lista
@@ -41,6 +42,7 @@ const Tornillos = () => {
           </div>
         </div>
       </div>
+    
     );
   };
 
@@ -86,6 +88,7 @@ const Adhesivos = () => {
 
   if (selectedProduct) {
     return (
+    
       <div className="producto-detalle">
         <button onClick={handleBackToList} className="back-button">
           Regresar a la lista
@@ -106,10 +109,12 @@ const Adhesivos = () => {
           </div>
         </div>
       </div>
+      
     );
   };
 
   return (
+ 
     <section className="Productos-general">
       <h2>Adhesivos</h2>
       <div className="product-grid-general">
@@ -131,6 +136,7 @@ const Adhesivos = () => {
         ))}
       </div>
     </section>
+   
   );
 };
 
