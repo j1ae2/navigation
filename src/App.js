@@ -108,7 +108,7 @@ const Header = () => {
         <div className="navbar-icons">
           <span>❤ 12</span>
           <Link to="/login">Login</Link>
-          <span>🛒 2</span>
+          <Link to="/carrito">🛒</Link>
         </div>
       </div>
       <nav className="main-nav">
@@ -147,6 +147,31 @@ const HeroSection = () => {
   );
 };
 
+const Carrito = () => {
+  return (
+    <>
+    <section className="grid-carrito">
+      <h2>Dentro del  carrito </h2>
+      <h2>Se encuentra un gran potencial.</h2>
+         
+      <p>
+      Parece que su carrito de compras está vacío.
+
+      Explore y agregue elementos para comenzar.
+      </p>
+        <Link to="/products">
+        <button className="add-cart-productos" >Empieza a comprar</button></Link> 
+        <p>o</p>
+        <Link to="/login">
+        <button className="add-cart-login">Login</button></Link>
+        <p>Para ver los artículos de su carrito y los productos guardados
+        de tu visita anterior</p>
+    </section>
+     <Footer />
+     </>
+  );
+};
+
 const ProductCategories = () => {
   return (
     <section className="product-categories">
@@ -168,7 +193,6 @@ const NewProducts = () => {
 
 const PromoBox = () => {
   const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
   const [buttonText, setButtonText] = useState('SUSCRÍBETE');
   const [buttonColor, setButtonColor] = useState('#007bff');
 
@@ -227,11 +251,6 @@ const ReviewSection = () => {
     { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
     { title: "Muy funcional", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
     { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
-    { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    { title: "Muy funcional", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
-    { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
- 
   ];
 
   const reviewsPerPage = 4;
@@ -349,8 +368,9 @@ const App = () => {
           <Route path="/returns-warranty" element={<ReturnsWarranty />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Tornillos" element={<Tornillos />} />
-          <Route path="/Adhesivos" element={<Adhesivos />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/Ferreteria/Tornillos" element={<Tornillos />} />
+          <Route path="/Ferreteria/Adhesivos" element={<Adhesivos />} />
           <Route path="/Soldaduras" element={<Soldaduras />} />
           <Route path="/Tuverias" element={<Tuverias />} />
         </Routes>
