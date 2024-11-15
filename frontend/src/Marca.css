@@ -1,0 +1,43 @@
+.contenedor-marca {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .titulo-marca {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .red-marca {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+  
+  .item-marca {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .item-marca:hover {
+    transform: scale(1.05);
+  }
+  
+  .logo-marca {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  .nombre-marca {
+    font-size: 16px;
+    font-weight: 500;
+  }
