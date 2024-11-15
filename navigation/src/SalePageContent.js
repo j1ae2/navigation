@@ -123,7 +123,7 @@ const SalePageContent = () => (
     </div>
     
     {/* Footer al final de la página */}
-    <Footer />
+    
   </div>
 );
 
