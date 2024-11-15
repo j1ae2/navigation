@@ -10,13 +10,11 @@ import Marcas from './Marca';
 import Login from './modules/Login/login';
 import Footer from './Footer';
 import Contact from './contacto';
+import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
 
-
-const Sale = () => <h2>Sale Page</h2>;
 const Brands = () => <Marcas />;
 const Outlet = () => <ProductoLG />;
 const Shipping = () => <h2>Shipping Page</h2>;
-
 
 const HomePage = () => (
   <>
@@ -32,17 +30,14 @@ const HomePage = () => (
 const Header = () => {
   return (
     <header className="header">
-      <div className="top-banner">
-        Envios gratis a partir de 200 soles.
-      </div>
+      <div className="top-banner">Envios gratis a partir de 200 soles.</div>
       <div className="navbar">
-        <Link to="/" >
+        <Link to="/">
           <div className="logo">
-        <img src="https://cdn.freelogovectors.net/wp-content/uploads/2022/05/the_container_store_logo_freelogovectors.net_.png" alt="The Container Store Icon" className="icon"/>
-        <h1 className="TextCointainer" > The Container Store<h2>®</h2></h1>
-        </div>
+            <img src="https://cdn.freelogovectors.net/wp-content/uploads/2022/05/the_container_store_logo_freelogovectors.net_.png" alt="The Container Store Icon" className="icon"/>
+            <h1 className="TextCointainer">The Container Store<h2>®</h2></h1>
+          </div>
         </Link>
-       
         <div className="search-bar">
           <input type="text" placeholder="Buscar productos..." />
         </div>
@@ -91,46 +86,41 @@ const HeroSection = () => {
 const Carrito = () => {
   return (
     <>
-    <section className="grid-carrito">
-      <h2>Dentro del  carrito </h2>
-      <h2>Se encuentra un gran potencial.</h2>
-         
-      <p>
-      Parece que su carrito de compras está vacío.
-
-      Explore y agregue elementos para comenzar.
-      </p>
+      <section className="grid-carrito">
+        <h2>Dentro del carrito</h2>
+        <h2>Se encuentra un gran potencial.</h2>
+        <p>
+          Parece que su carrito de compras está vacío.
+          Explore y agregue elementos para comenzar.
+        </p>
         <Link to="/products">
-        <button className="add-cart-productos" >Empieza a comprar</button></Link> 
+          <button className="add-cart-productos">Empieza a comprar</button>
+        </Link>
         <p>o</p>
         <Link to="/login">
-        <button className="add-cart-login">Login</button></Link>
-        <p>Para ver los artículos de su carrito y los productos guardados
-        de tu visita anterior</p>
-    </section>
-     <Footer />
-     </>
+          <button className="add-cart-login">Login</button>
+        </Link>
+        <p>Para ver los artículos de su carrito y los productos guardados de tu visita anterior</p>
+      </section>
+      <Footer />
+    </>
   );
 };
 
-const ProductCategories = () => {
-  return (
-    <section className="product-categories">
-      {/* Categorías de productos con enlaces */}
-    </section>
-  );
-};
+const ProductCategories = () => (
+  <section className="product-categories">
+    {/* Categorías de productos con enlaces */}
+  </section>
+);
 
-const NewProducts = () => {
-  return (
-    <section className="new-products">
-      <h2>New products!</h2>
-      <div className="product-grid">
-        {/* Cuadrícula de productos nuevos */}
-      </div>
-    </section>
-  );
-};
+const NewProducts = () => (
+  <section className="new-products">
+    <h2>New products!</h2>
+    <div className="product-grid">
+      {/* Cuadrícula de productos nuevos */}
+    </div>
+  </section>
+);
 
 const PromoBox = () => {
   const [email, setEmail] = useState('');
@@ -155,12 +145,11 @@ const PromoBox = () => {
         .then(response => response.json())
         .then(data => {
           alert(`Gracias por tu suscripción a ofertas. Tu código es: ${subscriptionCode}`);
-          setEmail(''); // Limpiar el campo de correo después de la suscripción
+          setEmail('');
         })
         .catch(error => console.error('Error al guardar la suscripción:', error));
     }
   };
-  
 
   return (
     <section className="promo-box">
@@ -184,23 +173,12 @@ const PromoBox = () => {
   );
 };
 
-
-
 const ReviewSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const reviews = [
     { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Buena atención ", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    { title: "Buena postventa", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "buenas novedades", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
     { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
     { title: "Muy buen producto", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
-    { title: "Llego muy rapido", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
-    { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
     { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
   ];
 
@@ -250,9 +228,6 @@ const ReviewSection = () => {
   );
 };
 
-
-
-
 const App = () => {
   return (
     <Router>
@@ -261,7 +236,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/sale" element={<Sale />} />
+          <Route path="/sale" element={<SalePageContent />} /> {/* Cambiado a nuevo componente */}
           <Route path="/Ferreteria" element={<Ferreteria />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/outlet" element={<Outlet />} />
