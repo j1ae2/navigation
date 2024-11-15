@@ -8,6 +8,10 @@ body {
 .header {
   width: 100%;
 }
+/*Esto esta para quitar el subrayado en los Link*/
+a {
+  text-decoration: none;
+}
 
 .top-banner {
   background-color: #333;
@@ -15,6 +19,30 @@ body {
   text-align: center;
   padding: 10px 0;
   font-size: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon {
+  width: 50px;
+  height: 20px;
+  margin-right: 10px;
+}
+.TextCointainer{
+  font-family: Arial, sans-serif;
+  color:  #0054a6;
+  font-weight: 890;
+  letter-spacing: -2px;
+}
+.TextCointainer h2
+{
+  display: inline;
+  font-size: 15px;
+  vertical-align: 15px;
 }
 
 /* Barra de navegación */
@@ -25,10 +53,6 @@ body {
   padding: 20px;
 }
 
-.logo h1 {
-  font-size: 24px;
-  cursor: pointer;
-}
 
 /* Barra de búsqueda */
 .search-bar input {

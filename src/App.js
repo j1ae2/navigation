@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
-import Ferreteria from './Ferreteria';
-import { Tornillos,Adhesivos, Soldaduras, Tuverias } from './tipoFerreteria';
+import Ferreteria from './modules/Ferreteria/Ferreteria';
+import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './modules/Ferreteria/tipoFerreteria';
 import ReturnsWarranty from './ReturnsWarranty';
 import Products from './products';
 import ProductoLG from './ProductoLG';
 import Marcas from './Marca';
-import Login from './login';
+import Login from './modules/Login/login';
+import Footer from './Footer';
 
 const Sale = () => <h2>Sale Page</h2>;
 const Brands = () => <Marcas />;
@@ -52,9 +53,13 @@ const Header = () => {
         Envios gratis a partir de 200 soles.
       </div>
       <div className="navbar">
-        <div className="logo">
-          <Link to="/"><h1> \cÖn/ + \tÄi/ + \nËr/ </h1></Link>
+        <Link to="/" >
+          <div className="logo">
+        <img src="https://cdn.freelogovectors.net/wp-content/uploads/2022/05/the_container_store_logo_freelogovectors.net_.png" alt="The Container Store Icon" className="icon"/>
+        <h1 className="TextCointainer" > The Container Store<h2>®</h2></h1>
         </div>
+        </Link>
+       
         <div className="search-bar">
           <input type="text" placeholder="Buscar productos..." />
         </div>
@@ -99,11 +104,12 @@ const HeroSection = () => {
     </section>
   );
 };
+
 const Carrito = () => {
   return (
     <>
     <section className="grid-carrito">
-      <h2>Dentro de cada carrito </h2>
+      <h2>Dentro del  carrito </h2>
       <h2>Se encuentra un gran potencial.</h2>
          
       <p>
@@ -145,7 +151,6 @@ const NewProducts = () => {
 
 const PromoBox = () => {
   const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
   const [buttonText, setButtonText] = useState('SUSCRÍBETE');
   const [buttonColor, setButtonColor] = useState('#007bff');
 
@@ -204,11 +209,6 @@ const ReviewSection = () => {
     { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
     { title: "Muy funcional", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
     { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
-    { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    { title: "Muy funcional", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
-    { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
- 
   ];
 
   const reviewsPerPage = 4;
@@ -254,59 +254,6 @@ const ReviewSection = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-const Footer = () => {
-  return (
-    <footer>
-      <div className="footer-content">
-        <div className="footer-column">
-          <h3>Need help?</h3>
-          <button>Contact Us</button>
-        </div>
-        <div className="footer-column">
-          <h3>Customer Support</h3>
-          <ul>
-            <li><a href="#">Devoluciones & Garantías</a></li>
-            <li><a href="#">Pagos</a></li>
-            <li><a href="#">Envío</a></li>
-            <li><a href="#">Términos del Servicio</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Información Corporativa</h3>
-          <ul>
-            <li><a href="#">Acerca de Nosotros</a></li>
-            <li><a href="#">Marcas</a></li>
-            <li><a href="#">Afiliados</a></li>
-            <li><a href="#">Inversionistas</a></li>
-            <li><a href="#">Cookies</a></li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Gift Card</h3>
-          <ul>
-            <li><a href="#">Comprar Gift Cards</a></li>
-            <li><a href="#">Canjear Gift Card</a></li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Ubicación</h3>
-          <p>Perú</p>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <p>&copy; 2024 Your Company. Todos los derechos reservados.</p>
-        <div className="social-media">
-          <a href="#"><i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </footer>
   );
 };
 
