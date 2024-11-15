@@ -9,31 +9,14 @@ import ProductoLG from './ProductoLG';
 import Marcas from './Marca';
 import Login from './modules/Login/login';
 import Footer from './Footer';
+import Contact from './contacto';
+
 
 const Sale = () => <h2>Sale Page</h2>;
 const Brands = () => <Marcas />;
 const Outlet = () => <ProductoLG />;
 const Shipping = () => <h2>Shipping Page</h2>;
 
-const Contact = () => {
-  return (
-    <div>
-      <h1>¡Contáctanos!</h1>
-      <p>¿Tienes alguna pregunta o necesitas más información? ¡Estamos aquí para ayudarte!</p>
-      <h2>¿Cómo contactarnos?</h2>
-      <ul>
-        <li><strong>Correo:</strong> mycontainer@mail.com</li>
-        <li><strong>Teléfono:</strong> +96434232</li>
-        <li><strong>Redes sociales:</strong> Síguenos en [container] para estar al día de nuestras novedades.</li> 
-      </ul>
-      <h3>Formulario de contacto</h3>
-      <p>Nombre: <input type="text" /></p>
-      <p>Correo electrónico: <input type="email" /></p>
-      <p>Mensaje: <textarea></textarea></p>
-      <button>Enviar</button>
-    </div>
-  );
-};
 
 const HomePage = () => (
   <>
