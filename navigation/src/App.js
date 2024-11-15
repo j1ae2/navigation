@@ -23,7 +23,6 @@ const HomePage = () => (
     <NewProducts />
     <PromoBox />
     <ReviewSection />
-    <Footer />
   </>
 );
 
@@ -102,7 +101,6 @@ const Carrito = () => {
         </Link>
         <p>Para ver los artículos de su carrito y los productos guardados de tu visita anterior</p>
       </section>
-      <Footer />
     </>
   );
 };
@@ -252,6 +250,7 @@ const App = () => {
           <Route path="/Soldaduras" element={<Soldaduras />} />
           <Route path="/Tuverias" element={<Tuverias />} />
         </Routes>
+        <Footer /> {/* Footer agregado aquí para que se muestre en todas las subpáginas */}
       </div>
     </Router>
   );
