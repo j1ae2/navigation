@@ -11,10 +11,16 @@ import Login from './modules/Login/login';
 import Footer from './Footer';
 import Contact from './contacto';
 import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
+// Importa el componente Shipping desde shipping.js
+import Shipping from './shipping';
+
+// Resto del código de App.js...
+
+
 
 const Brands = () => <Marcas />;
 const Outlet = () => <ProductoLG />;
-const Shipping = () => <h2>Shipping Page</h2>;
+const shipping = () => <h12>Envios</h12>;
 
 const HomePage = () => (
   <>
@@ -53,7 +59,7 @@ const Header = () => {
           <li><Link to="/Ferreteria">Ferretería</Link></li>
           <li><Link to="/brands">Marcas</Link></li>
           <li><Link to="/outlet">Outlet</Link></li>
-          <li><Link to="/shipping">Shipping</Link></li>
+          <li><Link to="/shipping">Envios</Link></li>
           <li><Link to="/returns-warranty">Devoluciones & Garantías</Link></li>
           <li><Link to="/contact">Contacto</Link></li>
         </ul>
@@ -135,7 +141,7 @@ const PromoBox = () => {
       const subscriptionCode = Math.floor(10000 + Math.random() * 90000);
       const subscriptionData = { email, subscriptionCode };
   
-      fetch('http://localhost:5000/saveSubscription', {
+      fetch('http://localhost:5001/saveSubscription', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(subscriptionData),
@@ -178,6 +184,15 @@ const ReviewSection = () => {
     { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
     { title: "Muy buen producto", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
     { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
+    { title: "Excelente calidad", stars: "⭐⭐⭐⭐⭐", text: "Los productos superaron mis expectativas, se nota la alta calidad en los materiales.", author: "Sofía Torres, hace 4 días" },
+    { title: "Variedad y buenos precios", stars: "⭐⭐⭐⭐⭐", text: "Gran variedad de productos a precios accesibles. Encontré todo lo que buscaba.", author: "Pedro Castillo, hace 2 días" },
+    { title: "Recomendado 100%", stars: "⭐⭐⭐⭐⭐", text: "La experiencia de compra fue excelente. Definitivamente volveré a comprar aquí.", author: "Claudia Fernández, hace 6 días" },
+    { title: "Fácil proceso de compra", stars: "⭐⭐⭐⭐⭐", text: "El proceso de compra fue sencillo y rápido. La página web es muy intuitiva.", author: "Luis Pérez, hace 1 semana" },
+    { title: "Atención personalizada", stars: "⭐⭐⭐⭐⭐", text: "El equipo de atención al cliente fue muy atento y me ayudaron en todo momento.", author: "Mariana Gutiérrez, hace 3 días" },
+    { title: "Excelente relación calidad-precio", stars: "⭐⭐⭐⭐⭐", text: "Muy satisfecho con la compra, excelente relación entre calidad y precio.", author: "Rodrigo Núñez, hace 5 días" },
+    { title: "Buen sistema de devoluciones", stars: "⭐⭐⭐⭐☆", text: "Tuve que hacer una devolución y el proceso fue rápido y sin complicaciones.", author: "Lucía Herrera, hace 4 días" },
+    { title: "Productos bien empacados", stars: "⭐⭐⭐⭐⭐", text: "Los productos llegaron en perfecto estado, bien empacados y protegidos.", author: "Carlos Jiménez, hace 2 días" },
+
   ];
 
   const reviewsPerPage = 4;
