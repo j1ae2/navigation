@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { sequelize } from './db/db.js';
 import { Usuario } from './models/Usuario.js';
-import { json } from 'sequelize';
+import { json, where } from 'sequelize';
 
 const app = express();
 const PORT = 5000;
@@ -83,9 +83,9 @@ app.post("/register", async (req, res) => {
   }
 });
 
-//GET DE TODOS LOS USUARIOS
+//GET DE TODOS LOS USUARIOS (admin)
 app.get('/users', async (req, res) => {
-  const usuariosRegistrados = await Usuario.findAll()
+  const usuariosRegistrados = await Usuario.findAll({where: {estado:true}})
   res.status(200).json(usuariosRegistrados)
 });
 
@@ -144,6 +144,27 @@ app.put("/changepass", async (req, res) => {
   }
 });
 
+// DELETE DE USUARIOS (admin)
+app.delete('/deleteuser', async (req, res) => {
+  const { email } = req.body;
+  const usuario = await Usuario.findOne({where: {email}})
+  if (!usuario ) {
+    return res.status(400).json({ error: 'Confirme el usuario' });
+  }
+  usuario.estado = false;
+  await usuario.save();
+  res.json({ message: 'Eliminado exitoso', usuario });
+});
+
+//PRODUCTOS COMPRADOS DEL USUARIO
+
+/*app.get("userproducts/:id/producto", async (req,res)=>{
+  const productos = await Usuario.findByPk(req.params.id,{
+    include:{
+      model: Producto
+    }
+  })
+})*/
 
 // PÁGINA DE CONTACTO
 app.post('/contacto', (req, res) => {
