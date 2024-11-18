@@ -5,7 +5,6 @@ import fs from 'fs';
 import path from 'path';
 import { sequelize } from './db/db.js';
 import { Usuario } from './models/Usuario.js';
-import { json, where } from 'sequelize';
 
 const app = express();
 const PORT = 5000;
@@ -90,21 +89,33 @@ app.get('/users', async (req, res) => {
 });
 
 //PÁGINA DE LOGIN
-app.get('/login', async (req, res) => {
-  const { username, password } = req.body;
+app.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-  // Buscar usuario por nombre
-  const user = users.find(u => u.username === username);
-  if (!user) {
-    return res.status(400).json({ error: 'Usuario no encontrado' });
-  }
+    // Validar si ambos campos están presentes
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Rellene todos los campos' });
+    }
 
-  // Comparar la contraseña ingresada con el hash almacenado
-  const isMatch = await bcrypt.compare(password, user.passwordHash);
-  if (isMatch) {
-    res.json({ message: 'Inicio de sesión exitoso' });
-  } else {
-    res.status(400).json({ error: 'Contraseña incorrecta' });
+    // Buscar el usuario por email
+    const usuario = await Usuario.findOne({ where: { email } });
+
+    // Validar si el usuario existe
+    if (!usuario) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
+
+    // Comparar la contraseña ingresada con el hash almacenado
+    const isMatch = await bcrypt.compare(password, usuario.passwordHash);
+    if (isMatch) {
+      return res.json({ message: 'Inicio de sesión exitoso' });
+    } else {
+      return res.status(400).json({ error: 'Contraseña incorrecta' });
+    }
+  } catch (error) {
+    console.error('Error en /login:', error);
+    return res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
 
