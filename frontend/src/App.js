@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
+import PROMOCION20porc from './logos/PROMOCION20porc.png';
 import Ferreteria from './modules/Ferreteria/Ferreteria';
 import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './modules/Ferreteria/tipoFerreteria';
 import ReturnsWarranty from './ReturnsWarranty';
@@ -18,6 +19,8 @@ const Shipping = () => <h2>Shipping Page</h2>;
 
 const HomePage = () => (
   <>
+    <Promocion20porciento />
+    <GarajeOferta />
     <HeroSection />
     <ProductCategories />
     <NewProducts />
@@ -61,6 +64,35 @@ const Header = () => {
     </header>
   );
 };
+
+const Promocion20porciento = () => {
+  return (
+    <section className="promocion20porc">
+      <img src={PROMOCION20porc} alt="Promoción 20% Off" className="promocion20porc-image" />
+    </section>
+  );
+};
+const GarajeOferta = () => {
+  return (
+    <section className="garaje-oferta-section">
+      <div className="garaje-oferta-content">
+        <p>SOLO EN TIEMPO LIMITADO</p>
+        <h1>Organiza tu garaje con estilo</h1>
+        <ul>
+          <li><strong>$100 off</strong> en compras de más de $500</li>
+          <li><strong>$250 off</strong> en compras de más de $1,000</li>
+          <li><strong>$500 off</strong> en compras de más de $1,500</li>
+        </ul>
+        <p>Prepara tu garaje para ser más funcional y ordenado. Promoción válida hasta el 26/11.</p>
+        <div className="garaje-oferta-buttons">
+          <button>Consulta de diseño gratuita</button>
+          <button>Ver productos de garaje</button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 const HeroSection = () => {
   return (

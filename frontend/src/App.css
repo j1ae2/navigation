@@ -200,6 +200,80 @@ a {
   color: red;
   font-weight: bold;
 }
+.promocion20porc {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promocion20porc-image {
+  width: 100%; /* La imagen ocupará todo el ancho disponible */
+  max-height: 400px; /* Ajusta el tamaño máximo según tus necesidades */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+}
+.garaje-oferta-section {
+  width: 100%;
+  height: 579px; /* Ajusta la altura según tu necesidad */
+  background-image: url('https://images.prismic.io/containerstoriesproduction/ZzaDwK8jQArT05Ji_Hero-Desk.webp?auto=format,compress&rect=0,0,3360,1400&w=1680&h=700'); /* Imagen del garaje */
+  background-size: contain; 
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Texto alineado a la izquierda */
+}
+
+.garaje-oferta-content {
+  max-width: 400px;
+  margin-left: 5%;
+  background-color: none;
+  padding: 20px;
+}
+
+.garaje-oferta-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.garaje-oferta-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.garaje-oferta-content strong{
+  color: red;
+}
+.garaje-oferta-content ul li {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.garaje-oferta-content p {
+  margin-bottom: 20px;
+}
+
+.garaje-oferta-buttons button {
+  background-color: rgba(0, 0, 0, 0.801);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border-color: #000;
+  border: solid;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.garaje-oferta-buttons button:hover {
+  background-color: white;
+  color: #000;
+}
+
 
 /* Promo box */
 .promo-box {
