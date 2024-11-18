@@ -8,6 +8,7 @@ import Products from './products';
 import ProductoLG from './ProductoLG';
 import Marcas from './Marca';
 import Login from './modules/Login/login';
+import Register from './modules/Login/register'
 import Footer from './Footer';
 import Contact from './contacto';
 import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
@@ -257,6 +258,7 @@ const App = () => {
           <Route path="/returns-warranty" element={<ReturnsWarranty />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/Ferreteria/Tornillos" element={<Tornillos />} />
           <Route path="/Ferreteria/Tornillos/:productTitle" element={<Tornillos />} />
