@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './products.css';
 
 
+  
+
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Cocina');
+  const { category } = useParams(); 
+  const [selectedCategory, setSelectedCategory] = useState(category || 'Cocina'); 
   
   const categories = [
     'General',

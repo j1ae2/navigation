@@ -12,10 +12,11 @@ import Login from './modules/Login/login';
 import Footer from './Footer';
 import Contact from './contacto';
 import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
+import Shipping from './shipping';
 
 const Brands = () => <Marcas />;
 const Outlet = () => <ProductoLG />;
-const Shipping = () => <h2>Shipping Page</h2>;
+
 
 const HomePage = () => (
   <>
@@ -86,7 +87,9 @@ const GarajeOferta = () => {
         <p>Prepara tu garaje para ser más funcional y ordenado. Promoción válida hasta el 26/11.</p>
         <div className="garaje-oferta-buttons">
           <button>Consulta de diseño gratuita</button>
-          <button>Ver productos de garaje</button>
+          <Link to="/products/Garaje">
+            <button>Ver productos de garaje</button>
+          </Link>
         </div>
       </div>
     </section>
@@ -266,7 +269,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/sale" element={<SalePageContent />} /> {/* Cambiado a nuevo componente */}
+          <Route path="/products/:category" element={<Products />} />
+          <Route path="/sale" element={<SalePageContent />} /> 
           <Route path="/Ferreteria" element={<Ferreteria />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/outlet" element={<Outlet />} />
