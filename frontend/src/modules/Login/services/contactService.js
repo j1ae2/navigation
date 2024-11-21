@@ -10,7 +10,10 @@ export async function enviarMensajeContacto(datosContacto) {
     });
 
     if (!response.ok) {
-      throw new Error("Ocurrió un error al enviar el mensaje.");
+      const errorData = await response.json();
+      throw new Error(
+        errorData.error || "Ocurrió un error al enviar el mensaje."
+      );
     }
 
     return await response.json();

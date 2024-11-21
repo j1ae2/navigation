@@ -97,15 +97,18 @@ app.post('/login', async (req, res) => {
     }
 
     // Buscar el usuario por email
-    const usuario = await Usuario.findOne({ where: { email }, where: {estado} });
+    const usuario = await Usuario.findOne({ where: { email } });
 
     // Validar si el usuario existe
     if (!usuario) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
-    if (!usuario.estado) {
+
+    //Validar si el usuario está activado
+    if (usuario.estado == false) {
       return res.status(404).json({ error: '¡Usuario desactivado!' });
     }
+
     // Comparar la contraseña ingresada con el hash almacenado
     const isMatch = await bcrypt.compare(password, usuario.passwordHash);
     if (isMatch) {

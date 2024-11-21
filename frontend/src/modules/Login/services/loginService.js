@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/login";
+const url = "http://localhost:5000/login";
 export async function login(email, password) {
   try {
     const response = await fetch(url, {
@@ -10,7 +10,10 @@ export async function login(email, password) {
     });
 
     if (!response.ok) {
-      throw new Error("Ocurrió un error al intentar loguearse.");
+      const errorData = await response.json();
+      throw new Error(
+        errorData.error || "Ocurrió un error al intentar loguearse."
+      );
     }
     return await response.json();
   } catch (error) {
