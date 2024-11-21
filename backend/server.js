@@ -19,8 +19,6 @@ async function verificarConexion(){
   }
 }
 
-let users = JSON.parse(fs.readFileSync('users.json', 'utf-8'));
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -99,13 +97,15 @@ app.post('/login', async (req, res) => {
     }
 
     // Buscar el usuario por email
-    const usuario = await Usuario.findOne({ where: { email } });
+    const usuario = await Usuario.findOne({ where: { email }, where: {estado} });
 
     // Validar si el usuario existe
     if (!usuario) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
-
+    if (!usuario.estado) {
+      return res.status(404).json({ error: '¡Usuario desactivado!' });
+    }
     // Comparar la contraseña ingresada con el hash almacenado
     const isMatch = await bcrypt.compare(password, usuario.passwordHash);
     if (isMatch) {
