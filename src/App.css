@@ -1,0 +1,487 @@
+/* Ajustar el ancho de toda la página a 3/4 de la pantalla y centrar */
+body {
+  width: 75%; /* Ancho de 3/4 de la página */
+  margin: 0 auto; /* Centrar la página en la pantalla */
+}
+
+/* Header styles */
+.header {
+  width: 100%;
+}
+/*Esto esta para quitar el subrayado en los Link*/
+a {
+  text-decoration: none;
+}
+
+.top-banner {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon {
+  width: 50px;
+  height: 20px;
+  margin-right: 10px;
+}
+.TextCointainer{
+  font-family: Arial, sans-serif;
+  color:  #0054a6;
+  font-weight: 890;
+  letter-spacing: -2px;
+}
+.TextCointainer h2
+{
+  display: inline;
+  font-size: 15px;
+  vertical-align: 15px;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+
+/* Barra de búsqueda */
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+}
+
+.navbar-icons span {
+  cursor: pointer;
+}
+
+/* Menú de navegación principal */
+.main-nav {
+  background-color: #f4f4f4;
+  padding: 15px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li {
+  margin: 0 15px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 50px;
+  background-color: #fafafa;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons button {
+  background-color: #333;
+  color: white;
+  padding: 15px 30px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.hero-pagination {
+  margin-top: 20px;
+}
+
+.hero-pagination span {
+  font-size: 18px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Categorías de productos */
+.product-categories {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+.category {
+  text-align: center;
+}
+
+.category-img {
+  width: 200px;
+  height: 150px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Nuevos productos */
+.new-products {
+  padding: 50px;
+  text-align: center;
+}
+
+.new-products h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Diseño de cuadrícula para productos */
+.product-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  width: 20%;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-img img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card p {
+  margin: 10px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 5px;
+}
+
+.discount {
+  color: red;
+  font-weight: bold;
+}
+.promocion20porc {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promocion20porc-image {
+  width: 100%; /* La imagen ocupará todo el ancho disponible */
+  max-height: 400px; /* Ajusta el tamaño máximo según tus necesidades */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+}
+.garaje-oferta-section {
+  width: 100%;
+  height: 579px; /* Ajusta la altura según tu necesidad */
+  background-image: url('https://images.prismic.io/containerstoriesproduction/ZzaDwK8jQArT05Ji_Hero-Desk.webp?auto=format,compress&rect=0,0,3360,1400&w=1680&h=700'); /* Imagen del garaje */
+  background-size: contain; 
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Texto alineado a la izquierda */
+}
+
+.garaje-oferta-content {
+  max-width: 400px;
+  margin-left: 5%;
+  background-color: none;
+  padding: 20px;
+}
+
+.garaje-oferta-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.garaje-oferta-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.garaje-oferta-content strong{
+  color: red;
+}
+.garaje-oferta-content ul li {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.garaje-oferta-content p {
+  margin-bottom: 20px;
+}
+
+.garaje-oferta-buttons button {
+  background-color: rgba(0, 0, 0, 0.801);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border-color: #000;
+  border: solid;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.garaje-oferta-buttons button:hover {
+  background-color: white;
+  color: #000;
+}
+
+
+/* Promo box */
+.promo-box {
+  background-image: url('https://images.prismic.io/containerstoriesproduction/ZwmpCIF3NbkBXW5w_Hero-Desk.webp?auto=format'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image horizontally */
+  height: 700px; /* Adjust the height as needed */
+  display: flex; /* Center the content vertically */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Ensure the text is readable on the image */
+}
+
+.promo-box h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.promo-box p {
+  font-size: 16px;
+}
+
+.promo-box h1 {
+  font-size: 50px;
+  color: #333;
+}
+
+.promo-box button {
+  background-color: #333;
+  color: white;
+  padding: 15px 30px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Sección de reseñas */
+.review-section {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+
+.subscribe-box {
+  margin-bottom: 30px;
+}
+
+.subscribe-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.subscribe-input input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.subscribe-input button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 75%; /* Ocupa 3/4 del ancho de la página */
+  max-width: 1200px; /* Limitar ancho máximo si es necesario */
+}
+
+.review-card {
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 300px; /* Tamaño máximo de cada tarjeta */
+  width: 100%; /* Permitir que se ajusten al ancho disponible */
+}
+
+/* Footer */
+footer {
+  background-color: #f4f4f4;
+  padding: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  width: 20%;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-column button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #666;
+}
+
+.social-media a {
+  font-size: 18px;
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: #000;
+}
+
+.tipoFerreteria {
+  text-align: center;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.category-item {
+  text-align: center;
+}
+
+.category-image {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.review-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.add-cart-productos{
+  background-color: #007bff;
+  color: white;
+  padding: 10px 52px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-cart-productos:hover {
+  background-color: #0056b3;
+}
+.add-cart-login{
+  color: #007bff;
+  background-color: white;
+  padding: 10px 100px;
+  border: 2px 2px 2px 2px solid;
+  border-color: #0056b3;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-cart-login:hover {
+  background-color: #0056b3;
+  color:white;
+}
+
