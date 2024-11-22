@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/contacto";
+const url = "https://backend-hkjj.onrender.com/contacto";
 export async function enviarMensajeContacto(datosContacto) {
   try {
     const response = await fetch(url, {
