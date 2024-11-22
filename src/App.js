@@ -6,7 +6,7 @@ import Ferreteria from './modules/Ferreteria/Ferreteria';
 import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './modules/Ferreteria/tipoFerreteria';
 import ReturnsWarranty from './ReturnsWarranty';
 import Products from './products';
-import ProductoLG from './ProductoLG';
+import Outlet from './outlet';
 import Marcas from './Marca';
 import Login from './modules/Login/login';
 import Register from './modules/Login/register';
@@ -14,9 +14,10 @@ import Footer from './Footer';
 import Contact from './contacto';
 import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
 import Shipping from './shipping';
+import { useCarrito } from "./modules/Carrito/carritoContext";
 
 const Brands = () => <Marcas />;
-const Outlet = () => <ProductoLG />;
+const Outlets = () => <Outlet />;
 
 const HomePage = () => (
   <>
@@ -31,6 +32,8 @@ const HomePage = () => (
 );
 
 const Header = () => {
+  const { carrito } = useCarrito();
+  const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
   return (
     <header className="header">
       <div className="top-banner">Envios gratis a partir de 200 soles.</div>
@@ -47,7 +50,7 @@ const Header = () => {
         <div className="navbar-icons">
           <span>❤ 12</span>
           <Link to="/login">Login</Link>
-          <Link to="/carrito">🛒</Link>
+          <Link to="/shop">🛒 <span>{totalProductos}</span></Link>
         </div>
       </div>
       <nav className="main-nav">
@@ -118,8 +121,12 @@ const HeroSection = () => {
 };
 
 const Carrito = () => {
-  return (
-   
+  const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } = useCarrito();
+
+  const total = carrito.reduce((acc, item) => acc + item.price * item.cantidad, 0);
+
+  if (carrito.length === 0) {
+    return (
       <section className="grid-carrito">
         <h2>Dentro del carrito</h2>
         <h2>Se encuentra un gran potencial.</h2>
@@ -134,9 +141,40 @@ const Carrito = () => {
         <Link to="/login">
           <button className="add-cart-login">Login</button>
         </Link>
-        <p>Para ver los artículos de su carrito y los productos guardados de tu visita anterior</p>
+        <p>
+          Para ver los artículos de su carrito y los productos guardados de tu
+          visita anterior
+        </p>
       </section>
-  
+    );
+  }
+
+  return (
+    <section className="carrito">
+      <h2>Tu carrito</h2>
+      <ul>
+        {carrito.map((item) => (
+          <li key={item.id}>
+            <img src={item.image} alt={item.title} />
+            <div>
+              <h3>{item.title}</h3>
+              <p>${item.price.toFixed(2)}</p>
+              <input
+                type="number"
+                min="1"
+                value={item.cantidad}
+                onChange={(e) => actualizarCantidad(item.id, parseInt(e.target.value))}
+              />
+              <button onClick={() => eliminarDelCarrito(item.id)}>Eliminar</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className="total">
+        <p>Total: ${total.toFixed(2)}</p>
+        <button onClick={limpiarCarrito}>Vaciar Carrito</button>
+      </div>
+    </section>
   );
 };
 
@@ -268,12 +306,13 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<Carrito/>} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:category" element={<Products />} />
           <Route path="/sale" element={<SalePageContent />} /> 
           <Route path="/Ferreteria" element={<Ferreteria />} />
           <Route path="/brands" element={<Brands />} />
-          <Route path="/outlet" element={<Outlet />} />
+          <Route path="/outlet" element={<Outlets />} />
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/returns-warranty" element={<ReturnsWarranty />} />
           <Route path="/contact" element={<Contact />} />
