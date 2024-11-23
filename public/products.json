@@ -1,0 +1,447 @@
+{
+    "products": [
+      {
+        "title": "Secaplatos Aluminio con Porta Cubiertos 57,5x35x27 cm",
+        "description": "Secaplatos de aluminio con diseño práctico y resistente.",
+        "price": 125,
+        "discountPrice": 179,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/207451-500-auto?v=637959483575130000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 7 Condimentero vidrio con rack 2 niveles",
+        "description": "Conjunto de condimenteros de vidrio con un elegante rack.",
+        "price": 26.90,
+        "discountPrice": 44,
+        "discount": "-40%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/273210-500-auto?v=638279099924970000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Mat Tex. Secavasos Textura 38 x 50 cm",
+        "description": "Alfombra textil para secar vasos con diseño moderno.",
+        "price": 10.40,
+        "discountPrice": 14.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/294838-500-auto?v=638566720544430000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Dispensador Poliresina para Lavaloza 9,1 x 8,2 x 18,2 cm",
+        "description": "Práctico dispensador de poliresina para lavaloza.",
+        "price": 25.10,
+        "discountPrice": 35.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/294266-500-auto?v=638545855094230000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 4 Tazas Acero Inoxidable medidoras",
+        "description": "Juego de tazas medidoras de acero inoxidable.",
+        "price": 17.95,
+        "discountPrice": 35.90,
+        "discount": "-50%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/198265-500-auto?v=637850445040270000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 3 Mini Escobillas para lavaplatos",
+        "description": "Prácticas escobillas para limpiar en espacios reducidos.",
+        "price": 11.10,
+        "discountPrice": 15.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/293027-500-auto?v=638527651148800000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 4 Cucharas Acero Inoxidable de Medidas",
+        "description": "Cucharas medidoras de acero inoxidable para cocina.",
+        "price": 7.45,
+        "discountPrice": 14.90,
+        "discount": "-50%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/198262-500-auto?v=637850445007730000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Tabla L Acacia 39 x 28.5 cm",
+        "description": "Tabla de madera de acacia, ideal para picar alimentos.",
+        "price": 34.90,
+        "discountPrice": 49.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/293788-500-auto?v=638544274689970000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Secaplatos Aluminio con Bandeja y Escurre Cubiertos 44x36x11,5 cm",
+        "description": "Secaplatos de aluminio con bandeja y escurridor de cubiertos.",
+        "price": 79.80,
+        "discountPrice": 114.00,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/205683-500-auto?v=637945529385670000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Secaplatos 2 pisos Aluminio Pequeño con Bandeja y Escurre Cubiertos 51x24,5x34 cm",
+        "description": "Compacto secaplatos de aluminio de dos pisos.",
+        "price": 104.30,
+        "discountPrice": 149.00,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/207445-500-auto?v=637959483523500000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 3 Tablas Plásticas",
+        "description": "Set de tablas plásticas de alta calidad para cocina.",
+        "price": 19.50,
+        "discountPrice": 27.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/293783-500-auto?v=638544274594900000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 7 Condimentero vidrio con rack 2 niveles",
+        "description": "Conjunto de condimenteros de vidrio con un elegante rack.",
+        "price": 26.90,
+        "discountPrice": 44,
+        "discount": "-40%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/273210-500-auto?v=638279099924970000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Mat Tex. Secavasos Textura 38 x 50 cm",
+        "description": "Alfombra textil para secar vasos con diseño moderno.",
+        "price": 10.40,
+        "discountPrice": 14.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/294838-500-auto?v=638566720544430000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Dispensador Poliresina para Lavaloza 9,1 x 8,2 x 18,2 cm",
+        "description": "Práctico dispensador de poliresina para lavaloza.",
+        "price": 25.10,
+        "discountPrice": 35.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/294266-500-auto?v=638545855094230000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 4 Tazas Acero Inoxidable medidoras",
+        "description": "Juego de tazas medidoras de acero inoxidable.",
+        "price": 17.95,
+        "discountPrice": 35.90,
+        "discount": "-50%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/198265-500-auto?v=637850445040270000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 3 Mini Escobillas para lavaplatos",
+        "description": "Prácticas escobillas para limpiar en espacios reducidos.",
+        "price": 11.10,
+        "discountPrice": 15.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/293027-500-auto?v=638527651148800000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Set 4 Cucharas Acero Inoxidable de Medidas",
+        "description": "Cucharas medidoras de acero inoxidable para cocina.",
+        "price": 7.45,
+        "discountPrice": 14.90,
+        "discount": "-50%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/198262-500-auto?v=637850445007730000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Tabla L Acacia 39 x 28.5 cm",
+        "description": "Tabla de madera de acacia, ideal para picar alimentos.",
+        "price": 34.90,
+        "discountPrice": 49.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/293788-500-auto?v=638544274689970000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Secaplatos Aluminio con Bandeja y Escurre Cubiertos 44x36x11,5 cm",
+        "description": "Secaplatos de aluminio con bandeja y escurridor de cubiertos.",
+        "price": 79.80,
+        "discountPrice": 114.00,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/205683-500-auto?v=637945529385670000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Secaplatos 2 pisos Aluminio Pequeño con Bandeja y Escurre Cubiertos 51x24,5x34 cm",
+        "description": "Compacto secaplatos de aluminio de dos pisos.",
+        "price": 104.30,
+        "discountPrice": 149.00,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/207445-500-auto?v=637959483523500000&width=500&height=auto&aspect=true",
+        "category": "Cocina"
+      },
+      {
+        "title": "Canasto Barr",
+        "description": "Canasto versátil para baño.",
+        "price": 39.90,
+        "discountPrice": 31.90,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/294964-500-auto?v=638570190084200000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Caja Organiz",
+        "description": "Caja organizadora ideal para espacios reducidos.",
+        "price": 50.00,
+        "discountPrice": 40.00,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/294882-500-auto?v=638568315084130000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Caja Plástica",
+        "description": "Caja plástica apilable y resistente.",
+        "price": 63.90,
+        "discountPrice": 44.70,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/284679-500-auto?v=638400041196830000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Caja Bambi",
+        "description": "Caja de bambú ecológica y funcional.",
+        "price": 18.90,
+        "discountPrice": 15.10,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/286137-500-auto?v=638434602746930000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Caja Acrílica",
+        "description": "Caja acrílica organizadora con tapa.",
+        "price": 20.90,
+        "discountPrice": 14.90,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/284662-500-auto?v=638400041035330000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Botiquín Plástico",
+        "description": "Botiquín plástico con bandejas divisorias.",
+        "price": 39.90,
+        "discountPrice": 31.90,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/284806-500-auto?v=638400042580000000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Set 3 Cajas",
+        "description": "Set de tres cajas organizadoras para cajón.",
+        "price": 31.90,
+        "discountPrice": 25.50,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/289649-500-auto?v=638463935302900000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Mueble Clóset",
+        "description": "Mueble metálico con bandejas y ruedas.",
+        "price": 219.00,
+        "discountPrice": 109.50,
+        "discount": "-50%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/284674-500-auto?v=638400041150270000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Canasto Polipropileno",
+        "description": "Canasto de polipropileno tejido para baño.",
+        "price": 159.00,
+        "discountPrice": 79.50,
+        "discount": "-50%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/286357-500-auto?v=638434603812500000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Removedor de Pelusa",
+        "description": "Removedor de pelusa reutilizable.",
+        "price": 15.90,
+        "discountPrice": 11.90,
+        "discount": "-25%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/286161-500-auto?v=638434602900170000&width=500&height=auto&aspect=true",
+        "category": "Baño"
+      },
+      {
+        "title": "Cajonera MDF - Bambú 3 Cajones 16,7x21,2x27,6 cm",
+        "description": "Cajonera compacta con diseño elegante en MDF y bambú.",
+        "price": 79.90,
+        "discountPrice": 63.90,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/286209-500-auto?v=638434603142270000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Cajonera MDF y Bambú 4 cajones 33x25x12,5",
+        "description": "Cajonera práctica con cuatro cajones de MDF y bambú.",
+        "price": 84.90,
+        "discountPrice": 67.90,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/247911-500-auto?v=638078497347230000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Cajonera MDF y Bambú 2 Cajones 33x25x12,5",
+        "description": "Cajonera funcional con dos cajones de MDF y bambú.",
+        "price": 84.90,
+        "discountPrice": 67.90,
+        "discount": "-20%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/286167-500-auto?v=638434602934500000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Caja Apilable de Metal Forma 34x30x15 cm",
+        "description": "Caja apilable de metal para organizar documentos.",
+        "price": 64.90,
+        "discountPrice": 29.90,
+        "discount": "-54%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/283748-500-auto?v=638379136178470000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Organizador documentos de Plástico Polipropileno clear 16x17,8x17,8 cm",
+        "description": "Organizador de documentos transparente y funcional.",
+        "price": 0,
+        "discountPrice": 20.90,
+        "discount": "0%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/285209-500-auto?v=638405822073130000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Cajonera Acrílico - Bambú 2 Cajones 32,1x24,2x13,4 cm",
+        "description": "Cajonera elegante de acrílico con bambú.",
+        "price": 104.00,
+        "discountPrice": 72.80,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/286199-500-auto?v=638434603095530000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Cajonera Plástica con Ruedas y 3 Compartimientos 44x33,5x59 cm",
+        "description": "Cajonera plástica móvil con tres compartimientos.",
+        "price": 0,
+        "discountPrice": 119.00,
+        "discount": "0%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/284882-500-auto?v=638400043459000000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Cajonera Acrílico - Bambú 3 Cajones 9,6x17,2x26,9 cm",
+        "description": "Cajonera de acrílico con tres cajones y detalles de bambú.",
+        "price": 84.90,
+        "discountPrice": 59.40,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/286204-500-auto?v=638434603119000000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Caja Organizadora Transparente con Tapa Bambú 3,8 l",
+        "description": "Caja organizadora con tapa de bambú, ideal para oficina.",
+        "price": 35.90,
+        "discountPrice": 25.10,
+        "discount": "-30%",
+        "image": "https://casaideasperu.vtexassets.com/arquivos/ids/289590-500-auto?v=638463935035500000&width=500&height=auto&aspect=true",
+        "category": "Oficina"
+      },
+      {
+        "title": "Caja Luxor 12L Rey",
+        "description": "Caja organizadora de 12 litros con diseño compacto.",
+        "price": 21.90,
+        "discountPrice": 21.90,
+        "discount": "0%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-luxor-12l-rey-50658-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja Móvil Suprema #40 Con Tapa",
+        "description": "Caja móvil con tapa, ideal para almacenamiento versátil.",
+        "price": 33.90,
+        "discountPrice": 33.90,
+        "discount": "0%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-movil-suprema-40-con-tapa-50662-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja De Herramientas Reyplast Megabox 20''",
+        "description": "Caja de herramientas resistente de gran tamaño.",
+        "price": 49.90,
+        "discountPrice": 49.90,
+        "discount": "0%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-de-herramientas-reyplast-megabox-20-60090-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja Organizadora Duraplast Broadway Grande Avengers 65 L",
+        "description": "Caja organizadora con tapa y diseño Avengers.",
+        "price": 67.10,
+        "discountPrice": 47.10,
+        "discount": "-30%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-duraplast-broadway-avengers-grande-65-l-con-tapa-66737-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja Infinity Con Ruedas 60 L",
+        "description": "Caja plástica con ruedas, práctica y funcional.",
+        "price": 44.10,
+        "discountPrice": 41.00,
+        "discount": "-7%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/i/n/infinity-box-60-lt-cruedas-57336-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Toolbox N°4 13 Lt",
+        "description": "Caja de herramientas compacta de 13 litros.",
+        "price": 25.00,
+        "discountPrice": 24.00,
+        "discount": "-4%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/t/o/toolbox-n4-13-lt-57383-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja Kitbox N°1 Baja Diseño Spiderman",
+        "description": "Caja organizadora baja con diseño Spiderman.",
+        "price": 13.00,
+        "discountPrice": 12.00,
+        "discount": "-8%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-kitbox-n1-baja-spiderman-duraplast-57933-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja Movil Suprema #40 Toy Story Rey",
+        "description": "Caja móvil con tapa y diseño Toy Story.",
+        "price": 41.90,
+        "discountPrice": 41.90,
+        "discount": "0%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-movil-suprema-40-toy-story-rey-50668-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja Kitbox N°1 Baja Diseño Princesas",
+        "description": "Caja organizadora baja con diseño Princesas.",
+        "price": 13.00,
+        "discountPrice": 12.00,
+        "discount": "-8%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-kitbox-n1-baja-princesa-duraplast-57931-default-1.jpg",
+        "category": "Garage"
+      },
+      {
+        "title": "Caja Optimus N°3 Alta Sin Bandeja Princesas 24 L",
+        "description": "Caja alta sin bandeja con diseño Princesas.",
+        "price": 36.00,
+        "discountPrice": 33.00,
+        "discount": "-8%",
+        "image": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/240x300/productos/i/c/a/caja-optimus-3-alta-sbandeja-princesa-57937-default-1.jpg",
+        "category": "Garage"
+      }
+      
+    ]
+  }
+  
