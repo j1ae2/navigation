@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useCarrito } from "./modules/Carrito/carritoContext";
+import { obtenerProductos } from "./modules//Carrito/services/productoServicio";
 import "./outlet.css";
 
 const Products = () => {
@@ -18,26 +19,15 @@ const Products = () => {
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await fetch("/products.json");
-        if (!response.ok) {
-          throw new Error("Error al obtener los productos");
-        }
-        const data = await response.json();
-        if (!Array.isArray(data.products)) {
-          throw new Error("El formato de los datos no es válido");
-        }
-        // Normalizamos las categorías para evitar inconsistencias
-        const productosNormalizados = data.products.map((producto) => ({
-          ...producto,
-          category: producto.category?.trim().toLowerCase() || "sin categoría",
-        }));
+        const productosNormalizados = await obtenerProductos();
         setProductos(productosNormalizados);
-        setCargando(false);
       } catch (err) {
         setError(err.message);
+      } finally {
         setCargando(false);
       }
     };
+
     fetchProductos();
   }, []);
 
@@ -54,11 +44,13 @@ const Products = () => {
     .filter((producto) =>
       filtroCategoria === "todos"
         ? true
-        : producto.category === filtroCategoria.toLowerCase()
+        : producto.categoria === filtroCategoria.toLowerCase()
     )
     .sort((a, b) => (orden === "asc" ? a.price - b.price : b.price - a.price));
 
-  const totalPaginas = Math.ceil(productosFiltrados.length / productosPorPagina);
+  const totalPaginas = Math.ceil(
+    productosFiltrados.length / productosPorPagina
+  );
 
   // Productos paginados
   const productosPaginados = productosFiltrados.slice(

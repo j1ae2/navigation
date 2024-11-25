@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import './App.css';
 import PROMOCION20porc from './logos/PROMOCION20porc.png';
 import Ferreteria from './modules/Ferreteria/Ferreteria';
@@ -15,10 +16,11 @@ import Contact from './contacto';
 import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
 import Shipping from './shipping';
 import { useCarrito } from "./modules/Carrito/carritoContext";
+import Pedido from './modules/Carrito/Pedido';
 
 const Brands = () => <Marcas />;
+const Order = () => <Pedido />;
 const Outlets = () => <Outlet />;
-
 const HomePage = () => (
   <>
     <Promocion20porciento />
@@ -122,7 +124,7 @@ const HeroSection = () => {
 
 const Carrito = () => {
   const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } = useCarrito();
-
+  const navigate = useNavigate();
   const total = carrito.reduce((acc, item) => acc + item.price * item.cantidad, 0);
 
   if (carrito.length === 0) {
@@ -173,6 +175,13 @@ const Carrito = () => {
       <div className="total">
         <p>Total: ${total.toFixed(2)}</p>
         <button onClick={limpiarCarrito}>Vaciar Carrito</button>
+        <button
+  onClick={() => navigate("/pedido")}
+  className="btn btn-pedido"
+>
+  Realizar Pedido
+</button>
+
       </div>
     </section>
   );
@@ -323,7 +332,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/pedido" element={<Order />} />
           <Route path="/Ferreteria/Tornillos" element={<Tornillos />} />
           <Route path="/Ferreteria/Tornillos/:productTitle" element={<Tornillos />} />
           <Route path="/Ferreteria/Adhesivos" element={<Adhesivos />} />
