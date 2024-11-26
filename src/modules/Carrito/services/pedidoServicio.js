@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/pedido";
+const url = "http://localhost:8000/pedido";
 export async function crearPedido(pedidoData) {
   try {
     const response = await fetch(url, {

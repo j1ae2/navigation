@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/products";
+const url = "http://localhost:8000/products";
 export const obtenerProductos = async () => {
     try {
       const response = await fetch(url);
