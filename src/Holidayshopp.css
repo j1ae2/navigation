@@ -1,0 +1,126 @@
+/* Estilos del HolidayBanner */
+.holiday-banner-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    background-color: #f5f0e9;
+  }
+  
+  .holiday-banner-text {
+    max-width: 50%;
+  }
+  
+  .holiday-banner-text h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .holiday-banner-text p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .holiday-shop-now-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .holiday-shop-now-button:hover {
+    background-color: #c00;
+  }
+  
+  .holiday-banner-image img {
+    width: 900px;
+    height: 550px;
+  }
+  
+  /* Estilos del PantryBanner */
+  .pantry-banner-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f0e9;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .pantry-banner-image img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .pantry-banner-text {
+    max-width: 50%;
+  }
+  
+  .pantry-banner-text h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .pantry-banner-text p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  /* Estilos del HolidayShop */
+  .holiday-shop-section {
+    padding: 20px;
+  }
+  
+  .holiday-shop-categories {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .holiday-category-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    width: 18%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .holiday-category-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .holiday-category-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .holiday-category-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .video-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }

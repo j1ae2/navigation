@@ -14,6 +14,7 @@ import Footer from './Footer';
 import Contact from './contacto';
 import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
 import Shipping from './shipping';
+import HolidayShop from './Holidayshop';
 
 const Brands = () => <Marcas />;
 const Outlet = () => <ProductoLG />;
@@ -53,6 +54,7 @@ const Header = () => {
       <nav className="main-nav">
         <ul>
           <li><Link to="/products">Productos</Link></li>
+          <li><Link to="/ComprasNavideñas">Compra navideñas</Link> </li>
           <li><Link to="/sale">SALE</Link></li>
           <li><Link to="/Ferreteria">Ferretería</Link></li>
           <li><Link to="/brands">Marcas</Link></li>
@@ -272,6 +274,7 @@ const App = () => {
           <Route path="/products/:category" element={<Products />} />
           <Route path="/sale" element={<SalePageContent />} /> 
           <Route path="/Ferreteria" element={<Ferreteria />} />
+          <Route path="/ComprasNavideñas" element={<HolidayShop />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/outlet" element={<Outlet />} />
           <Route path="/shipping" element={<Shipping />} />
