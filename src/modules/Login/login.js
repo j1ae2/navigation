@@ -2,9 +2,10 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "./services/loginService.js"; // Importa el servicio
 import { AuthContext } from "./loginContext.js";
-
+import { Link } from "react-router-dom";
+import "./login.css";
 const Login = () => {
-  const [credenciales, setCredenciales] = useState({ email: "", password: "" });
+  const [credenciales, setCredenciales] = useState({ email: "", password: ""});
   const [error, setError] = useState(null);
   const { iniciarSesion } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -30,9 +31,9 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Iniciar Sesión</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p>{error}</p>}
       <form onSubmit={manejarSubmit}>
         <input
           type="email"
@@ -49,8 +50,9 @@ const Login = () => {
           onChange={manejarCambio}
         />
         <button type="submit">Iniciar Sesión</button>
-        
-        <button type="submit">Registrar</button>
+        <Link to="/register">
+          <button type="submit">Registrarse</button>
+        </Link>
       </form>
     </div>
   );
