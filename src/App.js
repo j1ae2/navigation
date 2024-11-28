@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import './App.css';
@@ -17,6 +17,7 @@ import SalePageContent from './SalePageContent'; // Nuevo componente para el con
 import Shipping from './shipping';
 import { useCarrito } from "./modules/Carrito/carritoContext";
 import Pedido from './modules/Carrito/Pedido';
+import { AuthContext } from "./modules/Login/loginContext";
 
 const Brands = () => <Marcas />;
 const Order = () => <Pedido />;
@@ -35,6 +36,7 @@ const HomePage = () => (
 
 const Header = () => {
   const { carrito } = useCarrito();
+  const { usuario, cerrarSesion } = useContext(AuthContext);
   const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
   return (
     <header className="header">
@@ -51,8 +53,15 @@ const Header = () => {
         </div>
         <div className="navbar-icons">
           <span>❤ 12</span>
-          <Link to="/login">Login</Link>
           <Link to="/shop">🛒 <span>{totalProductos}</span></Link>
+          {usuario ? (
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <span style={{ marginRight: "10px" }}>Hola, {usuario.email}</span>
+              <button onClick={cerrarSesion}>Cerrar sesión</button>
+            </div>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </div>
       </div>
       <nav className="main-nav">
@@ -125,6 +134,10 @@ const HeroSection = () => {
 const Carrito = () => {
   const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } = useCarrito();
   const navigate = useNavigate();
+  const { usuario } = useContext(AuthContext);
+  if (!usuario) {
+    return <p>Debes iniciar sesión para acceder al carrito.</p>;
+  }
   const total = carrito.reduce((acc, item) => acc + item.price * item.cantidad, 0);
 
   if (carrito.length === 0) {
