@@ -51,6 +51,8 @@ const Login = () => {
           />
         </div>
         <button type="submit">Iniciar Sesión</button>
+        
+        <button type="submit">Registrar</button>
       </form>
       {message && (
         <p style={{ color: isError ? "red" : "green" }}>
