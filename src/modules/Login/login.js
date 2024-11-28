@@ -49,6 +49,8 @@ const Login = () => {
           onChange={manejarCambio}
         />
         <button type="submit">Iniciar Sesión</button>
+        
+        <button type="submit">Registrar</button>
       </form>
     </div>
   );
