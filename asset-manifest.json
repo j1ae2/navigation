@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/navigation/static/css/main.1fd34d6f.css",
+    "main.js": "/navigation/static/js/main.a125b04c.js",
+    "static/js/453.dd42d34f.chunk.js": "/navigation/static/js/453.dd42d34f.chunk.js",
+    "static/media/PROMOCION20porc.png": "/navigation/static/media/PROMOCION20porc.6cc052a7d3cb248387eb.png",
+    "static/media/marca2.gif": "/navigation/static/media/marca2.fceea3ae2913bf9f6f45.gif",
+    "static/media/marca.jpg": "/navigation/static/media/marca.24a3dc36821b1b80794e.jpg",
+    "static/media/rebook.png": "/navigation/static/media/rebook.32e0e9a8315f6249c61f.png",
+    "static/media/puma.png": "/navigation/static/media/puma.81c589ad3fd805bae88f.png",
+    "index.html": "/navigation/index.html",
+    "main.1fd34d6f.css.map": "/navigation/static/css/main.1fd34d6f.css.map",
+    "main.a125b04c.js.map": "/navigation/static/js/main.a125b04c.js.map",
+    "453.dd42d34f.chunk.js.map": "/navigation/static/js/453.dd42d34f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1fd34d6f.css",
+    "static/js/main.a125b04c.js"
+  ]
+}
