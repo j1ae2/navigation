@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCarrito } from "./carritoContext.js";
 import { crearPedido } from "./services/pedidoServicio.js"; // Servicio para manejar pedidos
-
+import { AuthContext } from "../Login/loginContext";
 const Pedido = () => {
+  const { usuario } = useContext(AuthContext);
   const { carrito, limpiarCarrito } = useCarrito();
   const navigate = useNavigate();
 
@@ -26,7 +27,7 @@ const Pedido = () => {
     try {
       const fecha = new Date().toISOString();
       const estado = "pendiente";
-      const usuarioId = 1; // Cambia esto según tu lógica de usuario
+      const usuarioId = usuario.id; // Cambia esto según tu lógica de usuario
 
       const pedidoData = {
         id: usuarioId,
