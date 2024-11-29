@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/register";
+const url = "http:localhost:8000/register";
 export async function registerUser(email, password) {
   try {
     const response = await fetch(url, {

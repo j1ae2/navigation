@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import './App.css';
 import PROMOCION20porc from './logos/PROMOCION20porc.png';
-import Ferreteria from './modules/Ferreteria/Ferreteria';
-import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './modules/Ferreteria/tipoFerreteria';
+
+/*import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './modules/Ferreteria/tipoFerreteria';*/
 import ReturnsWarranty from './ReturnsWarranty';
 import Products from './products';
-import ProductoLG from './ProductoLG';
+import Outlet from './outlet';
 import Marcas from './Marca';
 import Login from './modules/Login/login';
 import Register from './modules/Login/register';
@@ -15,10 +16,13 @@ import Contact from './contacto';
 import SalePageContent from './SalePageContent'; // Nuevo componente para el contenido de la página de ofertas
 import Shipping from './shipping';
 import HolidayShop from './Holidayshop';
+import { useCarrito } from "./modules/Carrito/carritoContext";
+import Pedido from './modules/Carrito/Pedido';
+import Productsferre from './tipoFerreteria';
 
 const Brands = () => <Marcas />;
-const Outlet = () => <ProductoLG />;
-
+const Order = () => <Pedido />;
+const Outlets = () => <Outlet />;
 const HomePage = () => (
   <>
     <Promocion20porciento />
@@ -32,6 +36,8 @@ const HomePage = () => (
 );
 
 const Header = () => {
+  const { carrito } = useCarrito();
+  const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
   return (
     <header className="header">
       <div className="top-banner">Envios gratis a partir de 200 soles.</div>
@@ -48,7 +54,7 @@ const Header = () => {
         <div className="navbar-icons">
           <span>❤ 12</span>
           <Link to="/login">Login</Link>
-          <Link to="/carrito">🛒</Link>
+          <Link to="/shop">🛒 <span>{totalProductos}</span></Link>
         </div>
       </div>
       <nav className="main-nav">
@@ -120,8 +126,12 @@ const HeroSection = () => {
 };
 
 const Carrito = () => {
-  return (
-   
+  const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } = useCarrito();
+  const navigate = useNavigate();
+  const total = carrito.reduce((acc, item) => acc + item.price * item.cantidad, 0);
+
+  if (carrito.length === 0) {
+    return (
       <section className="grid-carrito">
         <h2>Dentro del carrito</h2>
         <h2>Se encuentra un gran potencial.</h2>
@@ -136,9 +146,47 @@ const Carrito = () => {
         <Link to="/login">
           <button className="add-cart-login">Login</button>
         </Link>
-        <p>Para ver los artículos de su carrito y los productos guardados de tu visita anterior</p>
+        <p>
+          Para ver los artículos de su carrito y los productos guardados de tu
+          visita anterior
+        </p>
       </section>
-  
+    );
+  }
+
+  return (
+    <section className="carrito">
+      <h2>Tu carrito</h2>
+      <ul>
+        {carrito.map((item) => (
+          <li key={item.id}>
+            <img src={item.image} alt={item.title} />
+            <div>
+              <h3>{item.title}</h3>
+              <p>${item.price.toFixed(2)}</p>
+              <input
+                type="number"
+                min="1"
+                value={item.cantidad}
+                onChange={(e) => actualizarCantidad(item.id, parseInt(e.target.value))}
+              />
+              <button onClick={() => eliminarDelCarrito(item.id)}>Eliminar</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className="total">
+        <p>Total: ${total.toFixed(2)}</p>
+        <button onClick={limpiarCarrito}>Vaciar Carrito</button>
+        <button
+  onClick={() => navigate("/pedido")}
+  className="btn btn-pedido"
+>
+  Realizar Pedido
+</button>
+
+      </div>
+    </section>
   );
 };
 
@@ -215,6 +263,11 @@ const ReviewSection = () => {
     { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
     { title: "Muy buen producto", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
     { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
+    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
+    { title: "Muy buen producto", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
+    { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
+    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
+    
   ];
 
   const reviewsPerPage = 4;
@@ -270,25 +323,21 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<Carrito/>} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:category" element={<Products />} />
           <Route path="/sale" element={<SalePageContent />} /> 
-          <Route path="/Ferreteria" element={<Ferreteria />} />
           <Route path="/ComprasNavideñas" element={<HolidayShop />} />
           <Route path="/brands" element={<Brands />} />
-          <Route path="/outlet" element={<Outlet />} />
+          <Route path="/outlet" element={<Outlets />} />
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/returns-warranty" element={<ReturnsWarranty />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/carrito" element={<Carrito />} />
-          <Route path="/Ferreteria/Tornillos" element={<Tornillos />} />
-          <Route path="/Ferreteria/Tornillos/:productTitle" element={<Tornillos />} />
-          <Route path="/Ferreteria/Adhesivos" element={<Adhesivos />} />
-          <Route path="/Ferreteria/Adhesivos/:productTitle" element={<Adhesivos />} />
-          <Route path="/Soldaduras" element={<Soldaduras />} />
-          <Route path="/Tuverias" element={<Tuverias />} />
+          <Route path="/pedido" element={<Order />} />
+          <Route path="/Ferreteria" element={<Productsferre />} />
+      
         </Routes>
         <Footer /> {/* Footer agregado aquí para que se muestre en todas las subpáginas */}
       </div>
