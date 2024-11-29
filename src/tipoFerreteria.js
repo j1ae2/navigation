@@ -5,7 +5,7 @@ import "./outlet.css";
 
 const Productsferre = () => {
   const [productos, setProductos] = useState([]);
-  const [productoSeleccionado, setProductoSeleccionado] = useState(null); // Producto seleccionado
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null); 
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
   const [busqueda, setBusqueda] = useState("");
@@ -16,7 +16,7 @@ const Productsferre = () => {
 
   const { agregarAlCarrito } = useCarrito();
 
-  // Fetch de productos con normalización de categorías
+
   useEffect(() => {
     const fetchProductos = async () => {
       try {
@@ -32,12 +32,12 @@ const Productsferre = () => {
     fetchProductos();
   }, []);
 
-  // Reinicio de página al cambiar filtros
+  
   useEffect(() => {
     setPaginaActual(1);
   }, [busqueda, filtroCategoria, orden]);
 
-  // Filtro de productos
+  
   const productosFiltrados = productos
     .filter((producto) =>
       producto.title.toLowerCase().includes(busqueda.toLowerCase())
@@ -53,7 +53,7 @@ const Productsferre = () => {
     productosFiltrados.length / productosPorPagina
   );
 
-  // Productos paginados
+ 
   const productosPaginados = productosFiltrados.slice(
     (paginaActual - 1) * productosPorPagina,
     paginaActual * productosPorPagina
@@ -65,9 +65,7 @@ const Productsferre = () => {
     }
   };
 
-  const cerrarDetalle = () => setProductoSeleccionado(null); // Cierra el modal
-
-  // Renderización de la vista
+  const cerrarDetalle = () => setProductoSeleccionado(null); 
   if (cargando) {
     return (
       <div className="loading">

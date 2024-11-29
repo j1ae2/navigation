@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import './App.css';
 import PROMOCION20porc from './logos/PROMOCION20porc.png';
-
-/*import { Tornillos, Adhesivos, Soldaduras, Tuverias } from './modules/Ferreteria/tipoFerreteria';*/
 import ReturnsWarranty from './ReturnsWarranty';
 import Products from './products';
 import Outlet from './outlet';
@@ -17,7 +15,9 @@ import SalePageContent from './SalePageContent'; // Nuevo componente para el con
 import Shipping from './shipping';
 import HolidayShop from './Holidayshop';
 import { useCarrito } from "./modules/Carrito/carritoContext";
-import Pedido from './modules/Carrito/Pedido';
+import Pedido from "./modules/Carrito/Pedido";
+import { AuthContext } from "./modules/Login/loginContext";
+import Perfil from "./Perfil";
 import Productsferre from './tipoFerreteria';
 
 const Brands = () => <Marcas />;
@@ -37,15 +37,25 @@ const HomePage = () => (
 
 const Header = () => {
   const { carrito } = useCarrito();
-  const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
+  const { usuario, cerrarSesion } = useContext(AuthContext);
+  const totalProductos = carrito.reduce(
+    (total, item) => total + item.cantidad,
+    0
+  );
   return (
     <header className="header">
       <div className="top-banner">Envios gratis a partir de 200 soles.</div>
       <div className="navbar">
         <Link to="/">
           <div className="logo">
-            <img src="https://cdn.freelogovectors.net/wp-content/uploads/2022/05/the_container_store_logo_freelogovectors.net_.png" alt="The Container Store Icon" className="icon"/>
-            <h1 className="TextCointainer">The Container Store<h2>®</h2></h1>
+            <img
+              src="https://cdn.freelogovectors.net/wp-content/uploads/2022/05/the_container_store_logo_freelogovectors.net_.png"
+              alt="The Container Store Icon"
+              className="icon"
+            />
+            <h1 className="TextCointainer">
+              The Container Store<h2>®</h2>
+            </h1>
           </div>
         </Link>
         <div className="search-bar">
@@ -53,14 +63,24 @@ const Header = () => {
         </div>
         <div className="navbar-icons">
           <span>❤ 12</span>
-          <Link to="/login">Login</Link>
-          <Link to="/shop">🛒 <span>{totalProductos}</span></Link>
+          <Link to="/shop">
+            🛒 <span>{totalProductos}</span>
+          </Link>
+          {usuario ? (
+            <div className="user-session">
+              <span>Hola, {usuario.username}</span>
+              <button onClick={cerrarSesion}>Cerrar sesión</button>
+              <Link to="/perfil/{}"><button>Perfil</button></Link>
+            </div>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </div>
       </div>
       <nav className="main-nav">
         <ul>
           <li><Link to="/products">Productos</Link></li>
-          <li><Link to="/ComprasNavideñas">Compra navideñas</Link> </li>
+          <li><Link to="/Navideñas">ComprasNavideñas</Link></li>
           <li><Link to="/sale">SALE</Link></li>
           <li><Link to="/Ferreteria">Ferretería</Link></li>
           <li><Link to="/brands">Marcas</Link></li>
@@ -77,7 +97,11 @@ const Header = () => {
 const Promocion20porciento = () => {
   return (
     <section className="promocion20porc">
-      <img src={PROMOCION20porc} alt="Promoción 20% Off" className="promocion20porc-image" />
+      <img
+        src={PROMOCION20porc}
+        alt="Promoción 20% Off"
+        className="promocion20porc-image"
+      />
     </section>
   );
 };
@@ -88,11 +112,20 @@ const GarajeOferta = () => {
         <p>SOLO EN TIEMPO LIMITADO</p>
         <h1>Organiza tu garaje con estilo</h1>
         <ul>
-          <li><strong>$100 off</strong> en compras de más de $500</li>
-          <li><strong>$250 off</strong> en compras de más de $1,000</li>
-          <li><strong>$500 off</strong> en compras de más de $1,500</li>
+          <li>
+            <strong>$100 off</strong> en compras de más de $500
+          </li>
+          <li>
+            <strong>$250 off</strong> en compras de más de $1,000
+          </li>
+          <li>
+            <strong>$500 off</strong> en compras de más de $1,500
+          </li>
         </ul>
-        <p>Prepara tu garaje para ser más funcional y ordenado. Promoción válida hasta el 26/11.</p>
+        <p>
+          Prepara tu garaje para ser más funcional y ordenado. Promoción válida
+          hasta el 26/11.
+        </p>
         <div className="garaje-oferta-buttons">
           <button>Consulta de diseño gratuita</button>
           <Link to="/products/Garaje">
@@ -104,15 +137,16 @@ const GarajeOferta = () => {
   );
 };
 
-
 const HeroSection = () => {
   return (
     <section className="hero">
       <h2>Customiza tus espacios, te hacen sonreír.</h2>
       <p>
-        El hogar para las fiestas es mucho mejor con Elfa. Ya sea que necesites actualizar un rincón, 
-        crear un sistema de orden en la despensa o renovar una habitación de invitados,
-        Elfa es el sistema infinitamente flexible e increíblemente duradero que te permite preparar tu hogar para las fiestas en un abrir y cerrar de ojos.
+        El hogar para las fiestas es mucho mejor con Elfa. Ya sea que necesites
+        actualizar un rincón, crear un sistema de orden en la despensa o renovar
+        una habitación de invitados, Elfa es el sistema infinitamente flexible e
+        increíblemente duradero que te permite preparar tu hogar para las
+        fiestas en un abrir y cerrar de ojos.
       </p>
       <div className="hero-buttons">
         <button>SHOP SALES</button>
@@ -126,18 +160,22 @@ const HeroSection = () => {
 };
 
 const Carrito = () => {
-  const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } = useCarrito();
+  const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } =
+    useCarrito();
   const navigate = useNavigate();
-  const total = carrito.reduce((acc, item) => acc + item.price * item.cantidad, 0);
-
-  if (carrito.length === 0) {
+  const { usuario } = useContext(AuthContext);
+  const total = carrito.reduce(
+    (acc, item) => acc + item.price * item.cantidad,
+    0
+  );
+  if (carrito.length === 0 && !usuario) {
     return (
       <section className="grid-carrito">
         <h2>Dentro del carrito</h2>
         <h2>Se encuentra un gran potencial.</h2>
         <p>
-          Parece que su carrito de compras está vacío.
-          Explore y agregue elementos para comenzar.
+          Parece que su carrito de compras está vacío. Explore y agregue
+          elementos para comenzar.
         </p>
         <Link to="/products">
           <button className="add-cart-productos">Empieza a comprar</button>
@@ -150,6 +188,20 @@ const Carrito = () => {
           Para ver los artículos de su carrito y los productos guardados de tu
           visita anterior
         </p>
+      </section>
+    );
+  } else if (carrito.length === 0 && usuario){
+    return (
+      <section className="grid-carrito">
+        <h2>Dentro del carrito</h2>
+        <h2>Se encuentra un gran potencial.</h2>
+        <p>
+          Parece que su carrito de compras está vacío. Explore y agregue
+          elementos para comenzar.
+        </p>
+        <Link to="/products">
+          <button className="add-cart-productos">Empieza a comprar</button>
+        </Link>
       </section>
     );
   }
@@ -168,9 +220,13 @@ const Carrito = () => {
                 type="number"
                 min="1"
                 value={item.cantidad}
-                onChange={(e) => actualizarCantidad(item.id, parseInt(e.target.value))}
+                onChange={(e) =>
+                  actualizarCantidad(item.id, parseInt(e.target.value))
+                }
               />
-              <button onClick={() => eliminarDelCarrito(item.id)}>Eliminar</button>
+              <button onClick={() => eliminarDelCarrito(item.id)}>
+                Eliminar
+              </button>
             </div>
           </li>
         ))}
@@ -178,13 +234,9 @@ const Carrito = () => {
       <div className="total">
         <p>Total: ${total.toFixed(2)}</p>
         <button onClick={limpiarCarrito}>Vaciar Carrito</button>
-        <button
-  onClick={() => navigate("/pedido")}
-  className="btn btn-pedido"
->
-  Realizar Pedido
-</button>
-
+        <button onClick={() => navigate("/pedido")} className="btn btn-pedido">
+          Realizar Pedido
+        </button>
       </div>
     </section>
   );
@@ -199,38 +251,41 @@ const ProductCategories = () => (
 const NewProducts = () => (
   <section className="new-products">
     <h2>New products!</h2>
-    <div className="product-grid">
-      {/* Cuadrícula de productos nuevos */}
-    </div>
+    <div className="product-grid">{/* Cuadrícula de productos nuevos */}</div>
   </section>
 );
 
 const PromoBox = () => {
-  const [email, setEmail] = useState('');
-  const [buttonText, setButtonText] = useState('SUSCRÍBETE');
-  const [buttonColor, setButtonColor] = useState('#007bff');
+  const [email, setEmail] = useState("");
+  const [buttonText, setButtonText] = useState("SUSCRÍBETE");
+  const [buttonColor, setButtonColor] = useState("#007bff");
 
   const handleSubscribe = () => {
-    const newButtonText = buttonText === 'SUSCRÍBETE' ? 'GRACIAS' : 'SUSCRÍBETE';
-    const newButtonColor = buttonColor === '#007bff' ? '#f5deb3' : '#007bff';
+    const newButtonText =
+      buttonText === "SUSCRÍBETE" ? "GRACIAS" : "SUSCRÍBETE";
+    const newButtonColor = buttonColor === "#007bff" ? "#f5deb3" : "#007bff";
     setButtonText(newButtonText);
     setButtonColor(newButtonColor);
-  
-    if (newButtonText === 'GRACIAS') {
+
+    if (newButtonText === "GRACIAS") {
       const subscriptionCode = Math.floor(10000 + Math.random() * 90000);
       const subscriptionData = { email, subscriptionCode };
-  
-      fetch('http://localhost:5000/saveSubscription', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+
+      fetch("http://localhost:5000/saveSubscription", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(subscriptionData),
       })
-        .then(response => response.json())
-        .then(data => {
-          alert(`Gracias por tu suscripción a ofertas. Tu código es: ${subscriptionCode}`);
-          setEmail('');
+        .then((response) => response.json())
+        .then((data) => {
+          alert(
+            `Gracias por tu suscripción a ofertas. Tu código es: ${subscriptionCode}`
+          );
+          setEmail("");
         })
-        .catch(error => console.error('Error al guardar la suscripción:', error));
+        .catch((error) =>
+          console.error("Error al guardar la suscripción:", error)
+        );
     }
   };
 
@@ -259,15 +314,54 @@ const PromoBox = () => {
 const ReviewSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const reviews = [
-    { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    { title: "Muy buen producto", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
-    { title: "Entrega rápida y segura", stars: "⭐⭐⭐⭐⭐", text: "El paquete llegó antes de lo esperado y en perfectas condiciones.", author: "Carlos Ramos, hace 5 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    { title: "Muy buen producto", stars: "⭐⭐⭐⭐⭐", text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.", author: "Luz Gómez, hace 1 día" },
-    { title: "Buena atención al cliente", stars: "⭐⭐⭐⭐☆", text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.", author: "Ana López, hace 3 días" },
-    { title: "Calidad en cada detalle", stars: "⭐⭐⭐⭐⭐", text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.", author: "Mario Díaz, hace 2 días" },
-    
+    {
+      title: "Buena atención al cliente",
+      stars: "⭐⭐⭐⭐☆",
+      text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.",
+      author: "Ana López, hace 3 días",
+    },
+    {
+      title: "Calidad en cada detalle",
+      stars: "⭐⭐⭐⭐⭐",
+      text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.",
+      author: "Mario Díaz, hace 2 días",
+    },
+    {
+      title: "Muy buen producto",
+      stars: "⭐⭐⭐⭐⭐",
+      text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.",
+      author: "Luz Gómez, hace 1 día",
+    },
+    {
+      title: "Entrega rápida y segura",
+      stars: "⭐⭐⭐⭐⭐",
+      text: "El paquete llegó antes de lo esperado y en perfectas condiciones.",
+      author: "Carlos Ramos, hace 5 días",
+    },
+    {
+      title: "Calidad en cada detalle",
+      stars: "⭐⭐⭐⭐⭐",
+      text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.",
+      author: "Mario Díaz, hace 2 días",
+    },
+    {
+      title: "Muy buen producto",
+      stars: "⭐⭐⭐⭐⭐",
+      text: "Es justo lo que necesitaba. Práctico, de buen tamaño y fácil de usar.",
+      author: "Luz Gómez, hace 1 día",
+    },
+    {
+      title: "Buena atención al cliente",
+      stars: "⭐⭐⭐⭐☆",
+      text: "El servicio al cliente fue muy amable y resolvió todas mis dudas.",
+      author: "Ana López, hace 3 días",
+    },
+    {
+      title: "Calidad en cada detalle",
+      stars: "⭐⭐⭐⭐⭐",
+      text: "El producto está muy bien hecho. Atención a cada detalle. Me encantó.",
+      author: "Mario Díaz, hace 2 días",
+    },
   ];
 
   const reviewsPerPage = 4;
@@ -290,7 +384,10 @@ const ReviewSection = () => {
     <section className="review-section">
       <div className="subscribe-box">
         <h2>Gana 5% de descuento, suscríbete</h2>
-        <p>Suscríbete al boletín mensual. Recibe las últimas actualizaciones de productos y ofertas especiales directamente en tu bandeja de entrada.</p>
+        <p>
+          Suscríbete al boletín mensual. Recibe las últimas actualizaciones de
+          productos y ofertas especiales directamente en tu bandeja de entrada.
+        </p>
         <div className="subscribe-input">
           <input type="email" placeholder="Escribe tu email" />
           <button>SUBSCRÍBETE</button>
@@ -323,11 +420,10 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/shop" element={<Carrito/>} />
+          <Route path="/shop" element={<Carrito />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:category" element={<Products />} />
           <Route path="/sale" element={<SalePageContent />} /> 
-          <Route path="/ComprasNavideñas" element={<HolidayShop />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/outlet" element={<Outlets />} />
           <Route path="/shipping" element={<Shipping />} />
@@ -335,11 +431,13 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/perfil/:id" element= {<Perfil/>}/>
           <Route path="/pedido" element={<Order />} />
           <Route path="/Ferreteria" element={<Productsferre />} />
-      
+          <Route path="/Navideñas" element={<HolidayShop  />} />
         </Routes>
-        <Footer /> {/* Footer agregado aquí para que se muestre en todas las subpáginas */}
+        <Footer />{" "}
+        {/* Footer agregado aquí para que se muestre en todas las subpáginas */}
       </div>
     </Router>
   );

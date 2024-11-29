@@ -4,7 +4,10 @@ import { useCarrito } from "./carritoContext.js";
 const Carrito = () => {
   const { carrito, eliminarDelCarrito, limpiarCarrito, calcularTotal } =
     useCarrito();
-
+  const { usuario } = useContext(AuthContext);
+  if (!usuario) {
+    return <p>Debes iniciar sesión para acceder al carrito.</p>;
+  }
   return (
     <div className="carrito-container">
       <h3>Carrito de Compras</h3>

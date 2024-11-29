@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { CarritoProvider } from "./modules/Carrito/carritoContext";
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { AuthProvider } from "./modules/Login/loginContext";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CarritoProvider>
-      <App />
-    </CarritoProvider>
+    <AuthProvider>
+      <CarritoProvider>
+        <App />
+      </CarritoProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 
@@ -18,6 +20,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-
-

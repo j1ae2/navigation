@@ -4,6 +4,7 @@ import './register.css'
 const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
     const [message, setMessage] = useState("");
     const [isError, setIsError] = useState(false);
   
@@ -11,11 +12,12 @@ const Register = () => {
       e.preventDefault();
   
       try {
-        const result = await registerUser(email, password);
+        const result = await registerUser(email, password, username);
         setMessage(result.message || "Usuario registrado exitosamente.");
         setIsError(false); // Éxito
         setEmail("");
         setPassword("");
+        setUsername("");
       } catch (error) {
         setMessage(error); // Muestra el error devuelto por el backend
         setIsError(true); // Indica que hubo un error
@@ -43,6 +45,16 @@ const Register = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="username">Nombre de usuario:</label>
+            <input
+              type="username"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
