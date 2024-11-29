@@ -10,7 +10,7 @@ const HolidayBanner = () => {
         <p>
           Prepárate antes del estrés: compra papel de regalo, rellenos para calcetas, almacenamiento navideño, favoritos para entretener y más.
         </p>
-        <Link to="/ComprasNavideñas">
+        <Link to="/Navideñas">
           <button className="holiday-shop-now-button">Compra ahora</button>
         </Link>
       </div>

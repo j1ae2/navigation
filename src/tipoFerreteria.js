@@ -12,6 +12,7 @@ const Productsferre = () => {
   const [filtroCategoria, setFiltroCategoria] = useState("todos");
   const [orden, setOrden] = useState("asc");
   const [paginaActual, setPaginaActual] = useState(1);
+  const [precioSeleccionado, setPrecioSeleccionado] = useState(0);
   const productosPorPagina = 16;
 
   const { agregarAlCarrito } = useCarrito();
@@ -167,33 +168,64 @@ const Productsferre = () => {
 
       {/* Modal de detalle de producto */}
       {productoSeleccionado && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="close-modal" onClick={cerrarDetalle}>
-              X
-            </button>
-            <h2>{productoSeleccionado.title}</h2>
-            <img
-              src={productoSeleccionado.image || "/placeholder-image.png"}
-              alt={`Imagen de ${productoSeleccionado.title}`}
-              onError={(e) => (e.target.src = "/placeholder-image.png")}
-            />
-            <p>Precio: ${productoSeleccionado.price.toFixed(2)}</p>
-            <p>Descripción: {productoSeleccionado.description || "N/A"}</p>
-            <button
-              onClick={() => {
-                agregarAlCarrito(productoSeleccionado);
-                cerrarDetalle();
-              }}
-            >
-              Agregar al carrito
-            </button>
-            <button onClick={cerrarDetalle}>
-              Seguir comprando
-            </button>
-          </div>
-        </div>
-      )}
+  <div className="modal">
+    <div className="modal-content">
+      <button className="close-modal" onClick={cerrarDetalle}>
+        X
+      </button>
+      <h2>{productoSeleccionado.title}</h2>
+      <img
+        src={productoSeleccionado.image || "/placeholder-image.png"}
+        alt={`Imagen de ${productoSeleccionado.title}`}
+        onError={(e) => (e.target.src = "/placeholder-image.png")}
+      />
+      <p>{productoSeleccionado.description || "N/A"}</p>
+
+      {/* Botones para seleccionar el precio */}
+      <div>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.price)}>
+    Precio Base: ${productoSeleccionado.price ? productoSeleccionado.price.toFixed(2) : "N/A"}
+  </button>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption1)}>
+    Opción 1: ${productoSeleccionado.priceOption1 ? productoSeleccionado.priceOption1.toFixed(2) : "N/A"}
+  </button>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption2)}>
+    Opción 2: ${productoSeleccionado.priceOption2 ? productoSeleccionado.priceOption2.toFixed(2) : "N/A"}
+  </button>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption3)}>
+    Opción 3: ${productoSeleccionado.priceOption3 ? productoSeleccionado.priceOption3.toFixed(2) : "N/A"}
+  </button>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption4)}>
+    Opción 4: ${productoSeleccionado.priceOption4 ? productoSeleccionado.priceOption4.toFixed(2) : "N/A"}
+  </button>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption5)}>
+    Opción 5: ${productoSeleccionado.priceOption5 ? productoSeleccionado.priceOption5.toFixed(2) : "N/A"}
+  </button>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption6)}>
+    Opción 6: ${productoSeleccionado.priceOption6 ? productoSeleccionado.priceOption6.toFixed(2) : "N/A"}
+  </button>
+  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption7)}>
+    Opción 7: ${productoSeleccionado.priceOption7 ? productoSeleccionado.priceOption7.toFixed(2) : "N/A"}
+  </button>
+</div>
+
+
+      {/* Mostrar el precio seleccionado */}
+      <p>Precio seleccionado: ${precioSeleccionado}</p>
+
+      <button
+        onClick={() => {
+          agregarAlCarrito(productoSeleccionado, precioSeleccionado);
+          cerrarDetalle();
+        }}
+      >
+        Agregar al carrito
+      </button>
+      <button onClick={cerrarDetalle}>Seguir comprando</button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
