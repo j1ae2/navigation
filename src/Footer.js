@@ -1,36 +1,43 @@
+
+
+
+
+
+
+
 const Footer = () => {
   return (
     <footer>
       <div className="footer-content">
         <div className="footer-column">
           <h3>Need help?</h3>
-          <button>Contact Us</button>
+          <button onClick={() => window.location.href = "http://localhost:3006/contact"}>Contact Us</button>
         </div>
         <div className="footer-column">
           <h3>Customer Support</h3>
           <ul>
-            <li><a href="#">Devoluciones & Garantías</a></li>
-            <li><a href="#">Pagos</a></li>
-            <li><a href="#">Envío</a></li>
-            <li><a href="#">Términos del Servicio</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="http://localhost:3006/returns-warranty" target="_blank" rel="noopener noreferrer">Devoluciones & Garantías</a></li>
+            <li><a href="https://www.example.com/payments" target="_blank" rel="noopener noreferrer">Pagos</a></li>
+            <li><a href="https://www.example.com/shipping" target="_blank" rel="noopener noreferrer">Envío</a></li>
+            <li><a href="https://www.example.com/terms" target="_blank" rel="noopener noreferrer">Términos del Servicio</a></li>
+            <li><a href="https://www.example.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>Información Corporativa</h3>
           <ul>
-            <li><a href="#">Acerca de Nosotros</a></li>
-            <li><a href="#">Marcas</a></li>
-            <li><a href="#">Afiliados</a></li>
-            <li><a href="#">Inversionistas</a></li>
-            <li><a href="#">Cookies</a></li>
+            <li><a href="https://www.example.com/about" target="_blank" rel="noopener noreferrer">Acerca de Nosotros</a></li>
+            <li><a href="https://www.example.com/brands" target="_blank" rel="noopener noreferrer">Marcas</a></li>
+            <li><a href="https://www.example.com/affiliates" target="_blank" rel="noopener noreferrer">Afiliados</a></li>
+            <li><a href="https://www.example.com/investors" target="_blank" rel="noopener noreferrer">Inversionistas</a></li>
+            <li><a href="https://www.example.com/cookies" target="_blank" rel="noopener noreferrer">Cookies</a></li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>Gift Card</h3>
           <ul>
-            <li><a href="#">Comprar Gift Cards</a></li>
-            <li><a href="#">Canjear Gift Card</a></li>
+            <li><a href="https://www.example.com/buy-giftcards" target="_blank" rel="noopener noreferrer">Comprar Gift Cards</a></li>
+            <li><a href="https://www.example.com/redeem-giftcards" target="_blank" rel="noopener noreferrer">Canjear Gift Card</a></li>
           </ul>
         </div>
         <div className="footer-column">
@@ -41,10 +48,10 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; 2024 Your Company. Todos los derechos reservados.</p>
         <div className="social-media">
-          <a href="#"><i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
         </div>
       </div>
     </footer>
