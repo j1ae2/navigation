@@ -11,15 +11,15 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-column">
           <h3>Need help?</h3>
-          <button onClick={() => window.location.href = "http://localhost:3006/contact"}>Contact Us</button>
+          <button onClick={() => window.location.href = "https://www.containerstore.com/contact/index.htm"}>Contact Us</button>
         </div>
         <div className="footer-column">
           <h3>Customer Support</h3>
           <ul>
-            <li><a href="http://localhost:3006/returns-warranty" target="_blank" rel="noopener noreferrer">Devoluciones & Garantías</a></li>
+            <li><a href="https://j1ae2.github.io/returns-warranty" target="_blank" rel="noopener noreferrer">Devoluciones & Garantías</a></li>
             <li><a href="https://www.example.com/payments" target="_blank" rel="noopener noreferrer">Pagos</a></li>
-            <li><a href="https://www.example.com/shipping" target="_blank" rel="noopener noreferrer">Envío</a></li>
-            <li><a href="https://www.example.com/terms" target="_blank" rel="noopener noreferrer">Términos del Servicio</a></li>
+            <li><a href="https://j1ae2.github.io/shipping" target="_blank" rel="noopener noreferrer">Envío</a></li>
+            <li><a href="https://j1ae2.github.io/returns-warranty" target="_blank" rel="noopener noreferrer">Términos del Servicio</a></li>
             <li><a href="https://www.example.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></li>
           </ul>
         </div>
@@ -27,7 +27,7 @@ const Footer = () => {
           <h3>Información Corporativa</h3>
           <ul>
             <li><a href="https://www.example.com/about" target="_blank" rel="noopener noreferrer">Acerca de Nosotros</a></li>
-            <li><a href="https://www.example.com/brands" target="_blank" rel="noopener noreferrer">Marcas</a></li>
+            <li><a href="https://j1ae2.github.io/brands" target="_blank" rel="noopener noreferrer">Marcas</a></li>
             <li><a href="https://www.example.com/affiliates" target="_blank" rel="noopener noreferrer">Afiliados</a></li>
             <li><a href="https://www.example.com/investors" target="_blank" rel="noopener noreferrer">Inversionistas</a></li>
             <li><a href="https://www.example.com/cookies" target="_blank" rel="noopener noreferrer">Cookies</a></li>

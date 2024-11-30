@@ -115,6 +115,58 @@ const Shipping = () => {
       {shippingCost !== null && (
         <p>{shippingCost}</p>
       )}
+
+<img 
+        src="https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/ecdf7130ef10013390340a3ba3fac80a.yottaa.net/v~4b.555/medialibrary/images/curbside/masthead-curbside-desktop.jpg?yocs=9y_9B_9C_" 
+        alt="Envios" 
+        style={{ width: "100%", marginTop: "20px", borderRadius: "10px" }} 
+      />
+
+      {/* Texto traducido en dos columnas */}
+      <div style={{ display: "flex", justifyContent: "space-around", marginTop: "20px" }}>
+        {/* Primera columna */}
+        <div style={{ maxWidth: "45%", textAlign: "left" }}>
+     
+        <h3>Recogida en la Tienda</h3>
+          <p>
+            Recoger tu pedido en la tienda es GRATIS y rápido. Simplemente haz tu pedido en línea
+            y selecciona "Recogida en la Tienda" al finalizar la compra. Te enviaremos un correo electrónico
+            o un mensaje de texto con instrucciones específicas cuando tu pedido esté listo.
+            Una vez que llegues, haz clic en el enlace de tu correo electrónico, y llevaremos tu pedido a tu coche.
+          </p>
+        
+          <p>
+            También puedes llamar al <strong>1-800-733-3532</strong> para realizar un pedido para la Recogida en la Tienda.
+          </p>
+          {/* Imagen para Recogida en la Tienda */}
+          <img
+            src="https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/ecdf7130ef10013390340a3ba3fac80a.yottaa.net/v~4b.555/medialibrary/images/icons/icon_curbside-blue.svg?yocs=9y_9C_"
+            alt="Recogida en la Tienda"
+            style={{ width: "100%", marginTop: "10px", borderRadius: "10px" }}
+          />
+        </div>
+
+        {/* Segunda columna */}
+        <div style={{ maxWidth: "45%", textAlign: "left" }}>
+          <h3>Entrega Local</h3>
+          <p>
+            Ofrecemos entrega local en mercados seleccionados. Solo selecciona "Entrega Local" al finalizar la compra,
+            y recogeremos tu pedido en la tienda y lo entregaremos en tu hogar. En otros mercados,
+            alentamos a nuestros clientes a usar uno de nuestros socios de entrega, como Dolly.
+            Selecciona "Recogida en la Tienda" al finalizar la compra y luego permite que Dolly recoja tu pedido a través de su aplicación.
+          </p>
+          <p>
+            <strong>EXCLUSIVAMENTE EN MANHATTAN:</strong> Haz tu pedido en línea o compra en la tienda con un escáner
+            y haz que se entregue en cualquier lugar de Manhattan por solo $29.99.
+          </p>
+          {/* Imagen para Entrega Local */}
+          <img
+            src="https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/ecdf7130ef10013390340a3ba3fac80a.yottaa.net/v~4b.555/medialibrary/images/icons/icon_truck-blue.svg?yocs=9y_9C_"
+            alt="Entrega Local"
+            style={{ width: "100%", marginTop: "10px", borderRadius: "10px" }}
+          />
+        </div>
+      </div>
     </div>
   );
 };

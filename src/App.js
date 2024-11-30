@@ -248,12 +248,75 @@ const ProductCategories = () => (
   </section>
 );
 
-const NewProducts = () => (
+//imagenes trending
+
+const NewProducts = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Lista de imágenes (reemplaza los links con tus imágenes)
+  const images = [
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/507973/10093949-jumbo-merry-christmas-tote-.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/509697/10093907-fringe-ven.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/565133/10101846-medium-tote-gnome-snowglobe.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/563339/10101896-mini-tote-little-nutcracker.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/466986/10089050-ven1.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/396627/10082541g.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/500680/10093993-gift-bag-ven.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/554701/10101869-84077-lady-jayne-ven.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/399801/10082476_Collapsible-Box_with_Bow_Wh.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/565193/10102279-70422-punch-studio-ven.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/o~f_webp/v~4b.555.0.0/https://images.containerstore.com/catalogimages/556638/10102278-70421-punch-studio-ven.jpg?width=312&height=312",
+    "https://cdn-fsly.yottaa.net/55df7e1a2bb0ac7d800040c2/ecdf7130ef10013390340a3ba3fac80a.yottaa.net/v~4b.555/catalogimages/496355/10082050_Large_Collapsible-Box_with_.jpg?width=312&height=312&yocs=9y_9z_9B_9C_",
+  ];
+
+const itemsPerPage = 4;
+const totalPages = Math.ceil(images.length / itemsPerPage);
+
+const nextSlide = () => {
+  setCurrentIndex((prevIndex) => (prevIndex + 1) % totalPages);
+};
+
+const prevSlide = () => {
+  setCurrentIndex((prevIndex) => (prevIndex - 1 + totalPages) % totalPages);
+};
+
+// Obtener las imágenes visibles en la página actual
+const getVisibleImages = () => {
+  const start = currentIndex * itemsPerPage;
+  return images.slice(start, start + itemsPerPage);
+};
+
+return (
   <section className="new-products">
     <h2>New products!</h2>
-    <div className="product-grid">{/* Cuadrícula de productos nuevos */}</div>
+    <div className="carousel-container">
+      <button onClick={prevSlide} className="carousel-button">{"<"}</button>
+      <div className="carousel">
+        {getVisibleImages().map((src, index) => (
+          <img key={index} src={src} alt={`Producto ${currentIndex + index + 1}`} />
+        ))}
+      </div>
+      <button onClick={nextSlide} className="carousel-button">{">"}</button>
+    </div>
   </section>
 );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const PromoBox = () => {
   const [email, setEmail] = useState("");
