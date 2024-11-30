@@ -1,3 +1,25 @@
+.hook-logo-top-right {
+  position: absolute; /* Permite posicionar el elemento */
+  top: 0;             /* Alinea la imagen en la parte superior */
+  right: 0;           /* Alinea la imagen al extremo derecho */
+  z-index: 10;        /* Asegura que esté en la parte superior si hay elementos superpuestos */
+  width: 50px;        /* Ajusta el tamaño según tus necesidades */
+  height: auto;
+}
+.container {
+  position: relative; /* Crea un contexto de posicionamiento */
+  display: inline-block; /* Asegura que las imágenes se mantengan juntas */
+}
+.marca2-logo {
+  display: block; /* Asegura que se muestre correctamente */
+}
+
+
+
+
+
+
+
 .contenedor-marca {
   display: flex;
   flex-direction: column;
@@ -14,27 +36,61 @@
   text-align: center;
 }
 
+.gif-marca {
+  margin-bottom: 40px;
+  width: 400px;
+  height: auto;
+}
+
+.imagen-marca-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.imagen-marca {
+  width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+.logo-link {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
 .red-marca {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
+  gap: 15px; /* Espacio entre elementos */
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 20px;
 }
 
 .item-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   color: black;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .item-marca:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el hover */
 }
 
 .logo-marca {
@@ -48,4 +104,68 @@
   font-size: 16px;
   font-weight: 500;
   text-align: center;
+}
+
+
+.red-marca {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Alinea verticalmente (si los elementos tienen alturas diferentes) */
+  gap: 15px; /* Espaciado entre los logos */
+  flex-wrap: nowrap; /* Mantiene los elementos en una sola fila */
+  margin-top: 20px;
+  overflow-x: auto; /* Permite desplazamiento horizontal si hay muchas marcas */
+}
+
+.item-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0; /* Evita que los elementos se reduzcan en tamaños pequeños */
+}
+
+.item-marca:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-marca {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.nombre-marca {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.imagen-marca {
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0; /* Esto asegura que la imagen comience invisible */
+}
+
+.gif-marca {
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0; /* Comienza invisible */
 }
