@@ -514,3 +514,74 @@ footer {
 .user-session button:hover {
   background-color: #d32f2f;
 }
+
+
+
+
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-items {
+  flex: 2;
+  margin-right: 20px;
+}
+
+.cart-summary {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.item-image img {
+  width: 100px;
+  height: auto;
+}
+
+.item-details {
+  margin-left: 20px;
+}
+
+.summary-item,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.checkout-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
+
+.action-button {
+  margin-right: 10px;
+  background-color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #e0e0e0;
+}

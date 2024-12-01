@@ -159,94 +159,135 @@ const HeroSection = () => {
   );
 };
 
+
 const Carrito = () => {
   const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } =
     useCarrito();
   const navigate = useNavigate();
-  const { usuario } = useContext(AuthContext);
+
   const total = carrito.reduce(
     (acc, item) => acc + item.price * item.cantidad,
     0
   );
-  if (carrito.length === 0 && !usuario) {
-    return (
-      <section className="grid-carrito">
-        <h2>Dentro del carrito</h2>
-        <h2>Se encuentra un gran potencial.</h2>
-        <p>
-          Parece que su carrito de compras está vacío. Explore y agregue
-          elementos para comenzar.
-        </p>
-        <Link to="/products">
-          <button className="add-cart-productos">Empieza a comprar</button>
-        </Link>
-        <p>o</p>
-        <Link to="/login">
-          <button className="add-cart-login">Login</button>
-        </Link>
-        <p>
-          Para ver los artículos de su carrito y los productos guardados de tu
-          visita anterior
-        </p>
-      </section>
-    );
-  } else if (carrito.length === 0 && usuario){
-    return (
-      <section className="grid-carrito">
-        <h2>Dentro del carrito</h2>
-        <h2>Se encuentra un gran potencial.</h2>
-        <p>
-          Parece que su carrito de compras está vacío. Explore y agregue
-          elementos para comenzar.
-        </p>
-        <Link to="/products">
-          <button className="add-cart-productos">Empieza a comprar</button>
-        </Link>
-      </section>
-    );
-  }
+
+  const shippingCost = 12; // Costo fijo de envío como ejemplo
+  const discount = 5.0; // Descuento aplicado como ejemplo
 
   return (
-    <section className="carrito">
-      <h2>Tu carrito</h2>
-      <ul>
-        {carrito.map((item) => (
-          <li key={item.id}>
-            <img src={item.image} alt={item.title} />
-            <div>
-              <h3>{item.title}</h3>
-              <p>${item.price.toFixed(2)}</p>
-              <input
-                type="number"
-                min="1"
-                value={item.cantidad}
-                onChange={(e) =>
-                  actualizarCantidad(item.id, parseInt(e.target.value))
-                }
-              />
-              <button onClick={() => eliminarDelCarrito(item.id)}>
-                Eliminar
-              </button>
+    <section className="shopping-cart">
+      <h2>Carrito de Compras</h2>
+      <div className="cart-content">
+        {/* Sección izquierda: Detalles de los productos */}
+        <div className="cart-items">
+          <h3>Envio a domicilio ({carrito.length} items)</h3>
+          <p className="shipment-info">
+            Llegada: <strong>Listo lunes, diciembre 16</strong>
+          </p>
+          {carrito.map((item) => (
+            <div key={item.id} className="cart-item">
+              <div className="item-image">
+                <img src={item.image} alt={item.title} />
+              </div>
+              <div className="item-details">
+                <h4>{item.title}</h4>
+                <p>SKU#: {item.sku}</p>
+                <p>Dimensions: {item.dimensions}</p>
+
+                <div className="quantity-controls">
+                  <button
+                    onClick={() =>
+                      actualizarCantidad(item.id, item.cantidad - 1)
+                    }
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    value={item.cantidad}
+                    onChange={(e) =>
+                      actualizarCantidad(item.id, parseInt(e.target.value))
+                    }
+                  />
+                  <button
+                    onClick={() =>
+                      actualizarCantidad(item.id, item.cantidad + 1)
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+                <p className="item-price">
+                  <span className="current-price">
+                    ${item.price.toFixed(2)}
+                  </span>
+                  <span className="original-price">$9.99</span>
+                </p>
+                <button
+                  className="action-button"
+                  onClick={() => eliminarDelCarrito(item.id)}
+                >
+                  Delete
+                </button>
+                <button className="action-button">Save for Later</button>
+                <button className="action-button">Move to Wishlist</button>
+              </div>
             </div>
-          </li>
-        ))}
-      </ul>
-      <div className="total">
-        <p>Total: ${total.toFixed(2)}</p>
-        <button onClick={limpiarCarrito}>Vaciar Carrito</button>
-        <button onClick={() => navigate("/pedido")} className="btn btn-pedido">
-          Realizar Pedido
+          ))}
+        </div>
+        <button onClick={limpiarCarrito} className="clear-cart">
+          Clear Cart
         </button>
+        {/* Sección derecha: Resumen de pedido */}
+        <div className="cart-summary">
+          <h3>Resumen de Orden</h3>
+          <div className="summary-item">
+            <span>Orden Subtotal:</span>
+            <span>${total.toFixed(2)}</span>
+          </div>
+          <div className="summary-item">
+            <span>Ahorro:</span>
+            <span>-${discount.toFixed(2)}</span>
+          </div>
+          <div className="summary-item">
+            <span>Envio:</span>
+            <span>${shippingCost.toFixed(2)}</span>
+          </div>
+          <div className="summary-total">
+            <span>Sin Impuesto Total:</span>
+            <span>${(total - discount + shippingCost).toFixed(2)}</span>
+          </div>
+          <button
+            className="checkout-button"
+            onClick={() => navigate("/pedido")}
+          >
+            Realizar pedido ({carrito.length})
+          </button>
+          <div className="offers-promos">
+            <h4>Ofertas y Promo</h4>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
+
+
+
+
+
+
+
 
 const ProductCategories = () => (
   <section className="product-categories">
     {/* Categorías de productos con enlaces */}
   </section>
 );
+
+
+
+
+
 
 //imagenes trending
 
