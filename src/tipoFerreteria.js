@@ -86,9 +86,9 @@ const Productsferre = () => {
 
   return (
     <div className="outlet-container">
-      <h2>Productos Contenedores</h2>
+      <h2>Productos Ferreteria</h2>
 
-      {/* Filtros */}
+     
       <div className="filtros">
         <input
           type="text"
@@ -122,10 +122,10 @@ const Productsferre = () => {
         </button>
       </div>
 
-      {/* Información de productos */}
+      
       <p>Total de productos encontrados: {productosFiltrados.length}</p>
 
-      {/* Lista de productos */}
+  
       <div className="productos">
         {productosPaginados.length > 0 ? (
           productosPaginados.map((producto) => (
@@ -136,7 +136,7 @@ const Productsferre = () => {
                 onError={(e) => (e.target.src = "/placeholder-image.png")}
               />
               <h3>{producto.title}</h3>
-              <p>Precio: ${producto.price.toFixed(2)}</p>
+          
               <button onClick={() => setProductoSeleccionado(producto)}>
                 Ver Detalle
               </button>
@@ -147,7 +147,7 @@ const Productsferre = () => {
         )}
       </div>
 
-      {/* Paginación */}
+    
       <div className="paginacion">
         <button
           onClick={() => cambiarPagina(paginaActual - 1)}
@@ -166,61 +166,208 @@ const Productsferre = () => {
         </button>
       </div>
 
-      {/* Modal de detalle de producto */}
+     
       {productoSeleccionado && (
   <div className="modal">
     <div className="modal-content">
-      <button className="close-modal" onClick={cerrarDetalle}>
-        X
-      </button>
       <h2>{productoSeleccionado.title}</h2>
-      <img
+      <img className="imagen-producfere"
         src={productoSeleccionado.image || "/placeholder-image.png"}
         alt={`Imagen de ${productoSeleccionado.title}`}
         onError={(e) => (e.target.src = "/placeholder-image.png")}
       />
       <p>{productoSeleccionado.description || "N/A"}</p>
+     
+        
+      <table className="tabla-producto">
+        <thead>
+          <tr>
+            <th>Lg.</th>
+            <th>Threading</th>
+            <th>Thread Spacing</th>
+            <th>Dia.</th>
+            <th>Ht.</th>
+            <th>Drive Size</th>
+            <th>Tensile Strength (psi)</th>
+            <th>Specifications Met</th>
+            <th>Pkg. Qty.</th>
+            <th>Pkg. Code</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1/16"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASME B18.3, ASTM A574</td>
+            <td>50</td>
+            <td>91251A051</td>
+            <td>
+            <button onClick={() => setPrecioSeleccionado(productoSeleccionado.price)}>
+   ${productoSeleccionado.price ? productoSeleccionado.price.toFixed(2) : "N/A"}
+  </button>
+            </td>
+          </tr>
+          <tr>
+            <td>3/32"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASME B18.3, ASTM A574</td>
+            <td>10</td>
+            <td>91251A431</td>
+            <td>
+            {productoSeleccionado.priceOption1 && (
+    <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption1)}>
+     ${productoSeleccionado.priceOption1.toFixed(2)}
+    </button>
+  )}
+            </td>
+          </tr>
+          <tr>
+            <td>1/8"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASTM A574</td>
+            <td>50</td>
+            <td>91251A052</td>
+            <td>
+            {productoSeleccionado.priceOption2 && (
+    <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption2)}>
+    ${productoSeleccionado.priceOption2.toFixed(2)}
+    </button>
+  )}
+            </td>
+          </tr>
+          <tr>
+            <td>5/32"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASME B18.3, ASTM A574</td>
+            <td>10</td>
+            <td>91251A445</td>
+            <td>
+            {productoSeleccionado.priceOption3 && (
+    <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption3)}>
+      ${productoSeleccionado.priceOption3.toFixed(2)}
+    </button>
+  )}
+            </td>
+          </tr>
+          <tr>
+            <td>3/16"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASTM A574</td>
+            <td>50</td>
+            <td>91251A054</td>
+            <td>
+            {productoSeleccionado.priceOption4 && (
+    <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption4)}>
+      ${productoSeleccionado.priceOption4.toFixed(2)}
+    </button>
+  )}
+            </td>
+          </tr>
+          <tr>
+            <td>1/4"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASTM A574</td>
+            <td>50</td>
+            <td>91251A055</td>
+            <td>
+            {productoSeleccionado.priceOption5 && (
+    <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption5)}>
+      ${productoSeleccionado.priceOption5.toFixed(2)}
+    </button>
+  )}
+            </td>
+          </tr>
+          <tr>
+            <td>5/16"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASTM A574</td>
+            <td>25</td>
+            <td>91864A002</td>
+            <td>
+            {productoSeleccionado.priceOption6 && (
+    <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption6)}>
+    ${productoSeleccionado.priceOption6.toFixed(2)}
+    </button>
+  )}
+            </td>
+          </tr>
+          <tr>
+            <td>3/8"</td>
+            <td>Fully Threaded</td>
+            <td>Fine</td>
+            <td>0.096"</td>
+            <td>0.06"</td>
+            <td>0.050"</td>
+            <td>170,000</td>
+            <td>ASTM A574</td>
+            <td>50</td>
+            <td>91864A003</td>
+            <td>
+            {productoSeleccionado.priceOption7 && (
+    <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption7)}>
+    ${productoSeleccionado.priceOption7.toFixed(2)}
+    </button>
+  )}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+ 
+      
 
-      {/* Botones para seleccionar el precio */}
-      <div>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.price)}>
-    Precio Base: ${productoSeleccionado.price ? productoSeleccionado.price.toFixed(2) : "N/A"}
-  </button>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption1)}>
-    Opción 1: ${productoSeleccionado.priceOption1 ? productoSeleccionado.priceOption1.toFixed(2) : "N/A"}
-  </button>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption2)}>
-    Opción 2: ${productoSeleccionado.priceOption2 ? productoSeleccionado.priceOption2.toFixed(2) : "N/A"}
-  </button>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption3)}>
-    Opción 3: ${productoSeleccionado.priceOption3 ? productoSeleccionado.priceOption3.toFixed(2) : "N/A"}
-  </button>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption4)}>
-    Opción 4: ${productoSeleccionado.priceOption4 ? productoSeleccionado.priceOption4.toFixed(2) : "N/A"}
-  </button>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption5)}>
-    Opción 5: ${productoSeleccionado.priceOption5 ? productoSeleccionado.priceOption5.toFixed(2) : "N/A"}
-  </button>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption6)}>
-    Opción 6: ${productoSeleccionado.priceOption6 ? productoSeleccionado.priceOption6.toFixed(2) : "N/A"}
-  </button>
-  <button onClick={() => setPrecioSeleccionado(productoSeleccionado.priceOption7)}>
-    Opción 7: ${productoSeleccionado.priceOption7 ? productoSeleccionado.priceOption7.toFixed(2) : "N/A"}
-  </button>
-</div>
 
 
-      {/* Mostrar el precio seleccionado */}
+     
       <p>Precio seleccionado: ${precioSeleccionado}</p>
 
       <button
-        onClick={() => {
-          agregarAlCarrito(productoSeleccionado, precioSeleccionado);
-          cerrarDetalle();
-        }}
-      >
-        Agregar al carrito
-      </button>
+  onClick={() => {
+    agregarAlCarrito({
+      ...productoSeleccionado, 
+      price: precioSeleccionado, 
+    });
+    cerrarDetalle(); 
+  }}
+>
+  Agregar al carrito
+</button>
+
       <button onClick={cerrarDetalle}>Seguir comprando</button>
     </div>
   </div>
