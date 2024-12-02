@@ -163,13 +163,50 @@ const HeroSection = () => {
 const Carrito = () => {
   const { carrito, eliminarDelCarrito, actualizarCantidad, limpiarCarrito } =
     useCarrito();
+    const { usuario } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const total = carrito.reduce(
     (acc, item) => acc + item.price * item.cantidad,
     0
   );
-
+  if (carrito.length === 0 && !usuario) {
+    return (
+      <section className="grid-carrito">
+        <h2>Dentro del carrito</h2>
+        <h2>Se encuentra un gran potencial.</h2>
+        <p>
+          Parece que su carrito de compras está vacío. Explore y agregue
+          elementos para comenzar.
+        </p>
+        <Link to="/products">
+          <button className="add-cart-productos">Empieza a comprar</button>
+        </Link>
+        <p>o</p>
+        <Link to="/login">
+          <button className="add-cart-login">Login</button>
+        </Link>
+        <p>
+          Para ver los artículos de su carrito y los productos guardados de tu
+          visita anterior
+        </p>
+      </section>
+    );
+  } else if (carrito.length === 0 && usuario){
+    return (
+      <section className="grid-carrito">
+        <h2>Dentro del carrito</h2>
+        <h2>Se encuentra un gran potencial.</h2>
+        <p>
+          Parece que su carrito de compras está vacío. Explore y agregue
+          elementos para comenzar.
+        </p>
+        <Link to="/products">
+          <button className="add-cart-productos">Empieza a comprar</button>
+        </Link>
+      </section>
+    );
+  }
   const shippingCost = 12; // Costo fijo de envío como ejemplo
   const discount = 5.0; // Descuento aplicado como ejemplo
 
