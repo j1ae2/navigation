@@ -19,7 +19,7 @@ const Productsferre = () => {
 
 
   useEffect(() => {
-    const fetchProductos = async () => {
+    const fetchProductosFerrteria = async () => {
       try {
         const productosNormalizados = await obtenerProductosFerreteria();
         setProductos(productosNormalizados);
@@ -30,7 +30,7 @@ const Productsferre = () => {
       }
     };
 
-    fetchProductos();
+    fetchProductosFerrteria();
   }, []);
 
   
@@ -107,6 +107,7 @@ const Productsferre = () => {
           <option value="garage">Soldadura</option>
         </select>
         <select value={orden} onChange={(e) => setOrden(e.target.value)}>
+           <option value="">Filtrar por precio</option> 
           <option value="asc">Precio: Menor a Mayor</option>
           <option value="desc">Precio: Mayor a Menor</option>
         </select>
@@ -129,7 +130,7 @@ const Productsferre = () => {
       <div className="productos">
         {productosPaginados.length > 0 ? (
           productosPaginados.map((producto) => (
-            <div key={producto.id} className="producto">
+            <div key={producto.id} className="producto"onClick={() => setProductoSeleccionado(producto)}   style={{ cursor: "pointer" }} >
               <img
                 src={producto.image || "/placeholder-image.png"}
                 alt={`Imagen de ${producto.title}`}
@@ -137,9 +138,6 @@ const Productsferre = () => {
               />
               <h3>{producto.title}</h3>
           
-              <button onClick={() => setProductoSeleccionado(producto)}>
-                Ver Detalle
-              </button>
             </div>
           ))
         ) : (

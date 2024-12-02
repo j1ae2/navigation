@@ -37,7 +37,7 @@ const Carrito = () => {
                 id: producto.id,
                 title: producto.title,
                 cantidad: producto.cantidad,
-                precio: producto.precio,
+                precio: producto.price,
               })),
               total,
             },

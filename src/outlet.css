@@ -93,7 +93,7 @@
   }
   .modal-content {
     max-width: 600px;
-    max-height: 600px; 
+    max-height: 650px; 
     overflow: hidden; 
     padding: 20px;
     border-radius: 8px;
@@ -147,5 +147,7 @@
    justify-content: center;
    align-items: center;
     padding-left: 200px;
+    width: 150px;
+    height: 100px;
   }
   
