@@ -4,12 +4,6 @@ import { getProducts, addProduct, updateProduct, deleteProduct } from "./modules
 const ProductCRUD = () => {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({ title: "", description: "", price: 0 });
-  const [productoEditar, setProductoEditar] = useState(null);
-  const [formulario, setFormulario] = useState({
-    title: "",
-    description: "",
-    price: ""
-  });
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -24,7 +18,7 @@ const ProductCRUD = () => {
     setProducts([...products, addedProduct]);
   };
 
-  const handleUpdateProduct = async (id) => {
+  const handleUpdateProduct = async (id,updatedProduct) => {
     const updated = await updateProduct(id, updatedProduct);
     setProducts(products.map((p) => (p.id === id ? updated : p)));
   };
@@ -41,7 +35,7 @@ const ProductCRUD = () => {
         {products.map((product) => (
           <li key={product.id}>
             <p>{product.title}</p>
-            <button onClick={() => handleUpdateProduct(product.id)}>
+            <button onClick={() => handleUpdateProduct(product.id, { title: "INSERTAR TEXTO" })}>
               Editar
             </button>
             <button onClick={() => handleDeleteProduct(product.id)}>Eliminar</button>
