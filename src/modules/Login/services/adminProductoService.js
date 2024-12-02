@@ -21,7 +21,7 @@ export async function adminLogin(username, password) {
   }
 }
 
-export const getProducts = async () => {
+export const obtenerProductos = async () => {
   const response = await fetch(`${API_URL}/products`, {
     method: "GET",
   });
@@ -34,7 +34,7 @@ export const getProducts = async () => {
   return products;
 };
 
-export const addProduct = async (product) => {
+export const añadirProductos = async (product) => {
   const response = await fetch(`${API_URL}/products`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -49,7 +49,7 @@ export const addProduct = async (product) => {
   return newProduct;
 };
 
-export const updateProduct = async (id, product) => {
+export const actualizarProductos = async (id, product) => {
   const response = await fetch(`${API_URL}/products/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -64,7 +64,7 @@ export const updateProduct = async (id, product) => {
   return updatedProduct;
 };
 
-export const deleteProduct = async (id) => {
+export const eliminarProductos = async (id) => {
   const response = await fetch(`${API_URL}/products/${id}`, {
     method: "DELETE",
   });

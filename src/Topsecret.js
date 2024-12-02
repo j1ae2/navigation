@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./modules/Login/loginContext.js";
 import admin from "./logos/admin.png";
-import { adminLogin } from "./modules/Login/services/adminService.js";
+import { adminLogin } from "./modules/Login/services/adminProductoService.js";
 const Admin = () => {
   const [credenciales, setCredenciales] = useState({ username: "", password: ""});
   const [error, setError] = useState(null);

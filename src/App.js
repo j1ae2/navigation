@@ -22,6 +22,7 @@ import Productsferre from './tipoFerreteria';
 import Admin from "./Topsecret";
 import AdminDashboard from "./AdminCrud";
 import ProductCRUD from "./AdminProducto";
+import UsuarioCRUD from "./AdminUsuario";
 const Administrador = () => <Admin />;
 const Brands = () => <Marcas />;
 const Order = () => <Pedido />;
@@ -583,6 +584,7 @@ const App = () => {
           <Route path="/topsecret" element={<Administrador  />} />
           <Route path="/admin" element={<AdminDashboard  />} />
           <Route path="/admin/products" element={<ProductCRUD  />} />
+          <Route path="/admin/users" element={<UsuarioCRUD  />} />
         </Routes>
         <Footer />{" "}
         {/* Footer agregado aquí para que se muestre en todas las subpáginas */}

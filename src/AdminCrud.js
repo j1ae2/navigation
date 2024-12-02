@@ -15,6 +15,9 @@ const AdminDashboard = () => {
         </section>
         <section>
           <h2>Gestión de Usuarios</h2>
+          <Link to="/admin/users">
+          <button>USUARIOS</button>
+        </Link>
         </section>
       </div>
     </div>
