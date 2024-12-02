@@ -1,7 +1,7 @@
 export async function obtenerPedido(id) {
   try {
     console.log("inicio")
-    const response = await fetch(`http://localhost:8000/perfil?id=${id}`, {
+    const response = await fetch(`https://backend-hkjj.onrender.com/perfil?id=${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

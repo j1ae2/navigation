@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/register";
+const url = "https://backend-hkjj.onrender.com/register";
 export async function registerUser(email, password, username) {
   try {
     const response = await fetch(url, {

@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/changepass";
+const url = "https://backend-hkjj.onrender.com/changepass";
 export async function changePass(email, currentPassword, newPassword) {
   try {
     const response = await fetch(url, {

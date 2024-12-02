@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/pedido";
+const url = "https://backend-hkjj.onrender.com/pedido";
 export async function crearPedido(pedidoData) {
   try {
     const response = await fetch(url, {

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/admin/users";
+const API_URL = "https://backend-hkjj.onrender.com/admin/users";
 export const obtenerUsuarios = async () => {
   try {
     const response = await fetch(API_URL);

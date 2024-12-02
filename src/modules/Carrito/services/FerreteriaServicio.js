@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/Ferreteria";
+const url = "https://backend-hkjj.onrender.com/Ferreteria";
 export const obtenerProductosFerreteria = async () => {
     try {
       const response = await fetch(url);

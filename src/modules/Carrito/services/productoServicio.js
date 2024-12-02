@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/products";
+const url = "https://backend-hkjj.onrender.com/products";
 export const obtenerProductos = async () => {
     try {
       const response = await fetch(url);
