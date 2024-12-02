@@ -19,7 +19,10 @@ import Pedido from "./modules/Carrito/Pedido";
 import { AuthContext } from "./modules/Login/loginContext";
 import Perfil from "./Perfil";
 import Productsferre from './tipoFerreteria';
-
+import Admin from "./Topsecret";
+import AdminDashboard from "./AdminCrud";
+import ProductCRUD from "./AdminProducto";
+const Administrador = () => <Admin />;
 const Brands = () => <Marcas />;
 const Order = () => <Pedido />;
 const Outlets = () => <Outlet />;
@@ -88,6 +91,7 @@ const Header = () => {
           <li><Link to="/shipping">Shipping</Link></li>
           <li><Link to="/returns-warranty">Devoluciones & Garantías</Link></li>
           <li><Link to="/contact">Contacto</Link></li>
+          <li><Link to="/topsecret">TOP SECRET</Link></li>
         </ul>
       </nav>
     </header>
@@ -576,6 +580,9 @@ const App = () => {
           <Route path="/pedido" element={<Order />} />
           <Route path="/Ferreteria" element={<Productsferre />} />
           <Route path="/Navideñas" element={<HolidayShop  />} />
+          <Route path="/topsecret" element={<Administrador  />} />
+          <Route path="/admin" element={<AdminDashboard  />} />
+          <Route path="/admin/products" element={<ProductCRUD  />} />
         </Routes>
         <Footer />{" "}
         {/* Footer agregado aquí para que se muestre en todas las subpáginas */}
